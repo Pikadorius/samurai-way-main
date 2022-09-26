@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-        <div><Header /></div>
+        <Header />
      Hello, samurai! Let's go! Everything will be FINE! START FLYING!
         <ul>
             <li>Stand your ground</li>
@@ -20,9 +20,9 @@ function Header() {
     return (
         <div>
             <ul className="page-header">
-                <li><a>Home</a></li>
-                <li><a>News</a></li>
-                <li><a>Current</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Current</a></li>
             </ul>
         </div>
     );
