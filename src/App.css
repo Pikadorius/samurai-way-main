@@ -38,13 +38,14 @@
 }
 
 ul {
-  border: 1px solid black;
   width: 25%;
   margin: auto auto;
   padding: 0;
 }
 
 li {
+  margin: 5px 0;
   text-align: left;
   padding: 10px;
+  border: 1px solid black;
 }
