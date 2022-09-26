@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  width: 90%;
+  border: 2px solid slategrey;
+  margin: 20px auto;
+
 }
 
 .App-logo {
@@ -59,4 +63,12 @@ li {
 .important {
   color: red;
   text-transform: uppercase;
+}
+
+.break_line {
+  padding: 0;
+  margin: auto;
+  width: 60%;
+  height: 10px;
+  background-color: #282c34;
 }

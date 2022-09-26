@@ -39,7 +39,10 @@ const Recomendations = () => {
 
 const Welcome = () => {
     return (
+        <div>
         <h1>Hello, samurai! Let's go! Everything will be FINE! START FLYING!</h1>
+        <div className="break_line"></div>
+        </div>
     );
 }
 
