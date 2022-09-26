@@ -37,7 +37,7 @@
   }
 }
 
-ul {
+ul, ol {
   width: 25%;
   margin: auto auto;
   padding: 0;
@@ -54,4 +54,9 @@ li {
   display: flex;
   justify-content: space-around;
   list-style: inside;
+}
+
+.important {
+  color: red;
+  text-transform: uppercase;
 }
