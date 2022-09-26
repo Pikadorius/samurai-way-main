@@ -6,8 +6,9 @@ function App() {
     <div className="App">
      Hello, samurai! Let's go! Everything will be FINE! START FLYING!
         <ul>
-            <li>Easy</li>
+            <li>Stand your ground</li>
             <li>Step by step</li>
+            <li>Never give UP</li>
         </ul>
     </div>
   );
