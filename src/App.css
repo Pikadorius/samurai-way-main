@@ -49,3 +49,9 @@ li {
   padding: 10px;
   border: 1px solid black;
 }
+
+.page-header {
+  display: flex;
+  justify-content: space-around;
+  list-style: inside;
+}
