@@ -1,7 +1,6 @@
 import React from "react";
 
 const Welcome = () => {
-    debugger
     return (
         <div>
             <h1>Hello, samurai! Let's go! Everything will be FINE! START FLYING!</h1>
