@@ -7,15 +7,16 @@ import Technologies from "./Technologies";
 
 
 function App() {
-  return (
-    <div className="App">
-        This is APP component
-        <Header />
-        <Welcome />
-        <Recommendations />
-        <Technologies />
-    </div>
-  );
+    debugger
+    return (
+        <div className="App">
+            This is APP component
+            <Header/>
+            <Welcome/>
+            <Recommendations/>
+            <Technologies/>
+        </div>
+    );
 }
 
 export default App;
