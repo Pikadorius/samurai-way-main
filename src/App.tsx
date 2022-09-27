@@ -7,7 +7,6 @@ import Technologies from "./Technologies";
 
 
 function App() {
-    debugger
     return (
         <div className="App">
             This is APP component
