@@ -9,7 +9,7 @@ import Technologies from "./Technologies";
 function App() {
   return (
     <div className="App">
-        This is App component
+        This is APP component
         <Header />
         <Welcome />
         <Recommendations />
