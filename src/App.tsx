@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from "./Header";
 import Welcome from "./Welcome";
-import Recomendations from "./Recomendations";
+import Recommendations from "./Recommendations";
 import Technologies from "./Technologies";
 
 
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
         <Header />
         <Welcome />
-        <Recomendations />
+        <Recommendations />
         <Technologies />
     </div>
   );

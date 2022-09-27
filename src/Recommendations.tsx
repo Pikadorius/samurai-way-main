@@ -1,6 +1,6 @@
 import React from "react";
 
-let Recomendations = () => {
+let Recommendations = () => {
     return (
         <div>
             <p className="important">You CAN do it, just follow these directions:</p>
@@ -13,4 +13,4 @@ let Recomendations = () => {
     );
 }
 
-export default Recomendations;
+export default Recommendations;
