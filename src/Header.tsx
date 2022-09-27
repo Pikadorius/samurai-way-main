@@ -1,6 +1,7 @@
 import React from "react";
 
 const Header = () => {
+    debugger
     return (
         <div>
             <ul className="page-header">
