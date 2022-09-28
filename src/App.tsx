@@ -14,7 +14,35 @@ function App() {
             <Welcome/>
             <Recommendations/>
             <Technologies/>
-            <Footer />
+            <Footer/>
+            <Accordion/>
+        </div>
+    );
+}
+
+const Accordion = () => {
+    return (
+        <div>
+            <AccordionTitle/>
+            <AccordionBody/>
+        </div>
+    );
+}
+
+const AccordionTitle = () => {
+    console.log("AccordionTitle rendering")
+    return (
+        <div>
+            <p>I am AccordionTitle</p>
+        </div>
+    );
+}
+
+const AccordionBody = () => {
+    console.log("AccordionBody rendering")
+    return (
+        <div>
+            <p>I am AccordionBody</p>
         </div>
     );
 }
