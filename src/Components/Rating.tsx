@@ -4,18 +4,19 @@ const Rating = () => {
     console.log("Rating rendering")
     return (
         <div>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
+            <Star selected={true}/>
+            <Star selected={true}/>
+            <Star selected={false}/>
+            <Star selected={false}/>
+            <Star selected={false}/>
         </div>
     );
 }
 
-const Star = () => {
+const Star = (props: any) => {
+    debugger
     console.log("Star rendering")
-    return <span> Star </span>
+    return props.selected?(<span><b> star </b></span>):(<span> star </span>)
 }
 
 export default Rating;
