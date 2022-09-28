@@ -5,7 +5,7 @@ import Welcome from "./Components/Welcome";
 import Recommendations from "./Components/Recommendations";
 import Technologies from "./Components/Technologies";
 import Footer from "./Components/Footer";
-import Accordion from "./Components/Accordion/Accordion";
+import Accordion from "./Components/Accordion";
 
 
 function App() {
