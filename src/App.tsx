@@ -4,6 +4,7 @@ import Header from "./Header";
 import Welcome from "./Welcome";
 import Recommendations from "./Recommendations";
 import Technologies from "./Technologies";
+import Footer from "./Footer";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
             <Welcome/>
             <Recommendations/>
             <Technologies/>
+            <Footer />
         </div>
     );
 }
