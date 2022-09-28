@@ -6,6 +6,7 @@ import Recommendations from "./Components/Recommendations";
 import Technologies from "./Components/Technologies";
 import Footer from "./Components/Footer";
 import Accordion from "./Components/Accordion";
+import Rating from "./Components/Rating";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Technologies/>
             <Footer/>
             <Accordion/>
+            <Rating />
         </div>
     );
 }
