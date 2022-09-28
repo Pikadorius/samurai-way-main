@@ -68,7 +68,7 @@ li {
 
 .break_line {
   padding: 0;
-  margin: auto;
+  margin: 20px auto;
   width: 60%;
   height: 10px;
   background-color: #282c34;

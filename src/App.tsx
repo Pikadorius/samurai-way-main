@@ -16,10 +16,11 @@ function App() {
             <Header/>
             <Welcome/>
             <Recommendations/>
+            <Rating value={4}/>
             <Technologies/>
+            <Rating value={3}/>
             <Footer/>
             <Accordion/>
-            <Rating />
         </div>
     );
 }

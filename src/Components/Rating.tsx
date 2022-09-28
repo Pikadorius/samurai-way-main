@@ -1,6 +1,6 @@
 import React from "react";
 
-const Rating = () => {
+const Rating = (props: any) => {
     console.log("Rating rendering")
     return (
         <div>
@@ -16,7 +16,7 @@ const Rating = () => {
 const Star = (props: any) => {
     debugger
     console.log("Star rendering")
-    return props.selected?(<span><b> star </b></span>):(<span> star </span>)
+    return props.selected?(<span><b> star </b></span>):(<span> star </span>);
 }
 
 export default Rating;
