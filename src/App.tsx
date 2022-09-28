@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
-import Header from "./Header";
-import Welcome from "./Welcome";
-import Recommendations from "./Recommendations";
-import Technologies from "./Technologies";
-import Footer from "./Footer";
+import Header from "./Components/Header";
+import Welcome from "./Components/Welcome";
+import Recommendations from "./Components/Recommendations";
+import Technologies from "./Components/Technologies";
+import Footer from "./Components/Footer";
+import Accordion from "./Components/Accordion/Accordion";
 
 
 function App() {
@@ -21,32 +22,5 @@ function App() {
     );
 }
 
-const Accordion = () => {
-    console.log("Accordion rendering")
-    return (
-        <div>
-            <AccordionTitle/>
-            <AccordionBody/>
-        </div>
-    );
-}
-
-const AccordionTitle = () => {
-    console.log("AccordionTitle rendering")
-    return (
-        <div>
-            <p>I am AccordionTitle</p>
-        </div>
-    );
-}
-
-const AccordionBody = () => {
-    console.log("AccordionBody rendering")
-    return (
-        <div>
-            <p>I am AccordionBody</p>
-        </div>
-    );
-}
 
 export default App;
