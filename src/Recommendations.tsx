@@ -1,6 +1,7 @@
 import React from "react";
 
 let Recommendations = () => {
+    console.log("Recommendations rendering")
     return (
         <div>
             <p className="important">You CAN do it, just follow these directions:</p>

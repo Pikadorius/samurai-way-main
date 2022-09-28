@@ -1,6 +1,7 @@
 import React from "react";
 
 const Welcome = () => {
+    console.log("Welcome rendering")
     return (
         <div>
             <h1>Hello, samurai! Let's go! Everything will be FINE! START FLYING!</h1>
