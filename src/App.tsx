@@ -20,7 +20,7 @@ function App() {
             <Technologies/>
             <Rating value={4}/>
             <Footer/>
-            <Accordion/>
+            <Accordion title={"I am new Accordion Title"}/>
         </div>
     );
 }

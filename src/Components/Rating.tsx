@@ -64,7 +64,6 @@ const Rating = (props: any) => {
 }
 
 const Star = (props: any) => {
-    debugger
     console.log("Star rendering")
     return props.selected?(<span><b> star </b></span>):(<span> star </span>);
 }
