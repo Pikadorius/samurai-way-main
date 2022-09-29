@@ -18,7 +18,7 @@ function App() {
             <Recommendations/>
             <Rating value={4}/>
             <Technologies/>
-            <Rating value={3}/>
+            <Rating value={5}/>
             <Footer/>
             <Accordion/>
         </div>
