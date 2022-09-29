@@ -1,10 +1,10 @@
 import React from "react";
 
-const Welcome = () => {
+const Welcome = (props: any) => {
     console.log("Welcome rendering")
     return (
         <div>
-            <h1>Hello, samurai! Let's go! Everything will be FINE! START FLYING!</h1>
+            <h1>{props.title}</h1>
             <div className="break_line"></div>
         </div>
     );

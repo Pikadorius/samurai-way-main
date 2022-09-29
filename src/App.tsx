@@ -14,11 +14,11 @@ function App() {
     return (
         <div className="App">
             <Header/>
-            <Welcome/>
+            <Welcome title={"Hello, young samurai!"}/>
             <Recommendations/>
-            <Rating value={4}/>
+            <Rating value={3}/>
             <Technologies/>
-            <Rating value={5}/>
+            <Rating value={4}/>
             <Footer/>
             <Accordion/>
         </div>
