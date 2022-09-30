@@ -14,7 +14,7 @@ function App() {
     return (
         <div className="App">
             <Header/>
-            <Welcome title={"Hello, young samurai!"}/>
+            <Welcome title={"Hello!"}/>
             <Recommendations/>
             <Rating value={3}/>
             <Technologies/>

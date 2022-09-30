@@ -1,6 +1,10 @@
 import React from "react";
 
-const Welcome = (props: any) => {
+type WelcomePropsType = {
+    title: string,
+}
+
+const Welcome = (props: WelcomePropsType) => {
     console.log("Welcome rendering")
     return (
         <div>
