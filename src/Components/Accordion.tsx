@@ -2,7 +2,7 @@ import React from "react";
 
 type AccordionPropsType = {
     title: string,
-    list: object
+    list: Array<string>
 }
 
 const Accordion = (props: AccordionPropsType) => {
@@ -15,8 +15,11 @@ const Accordion = (props: AccordionPropsType) => {
     );
 }
 
+type AccordionTitlePropsType = {
+    title: string,
+}
 
-const AccordionTitle = (props: any) => {
+const AccordionTitle = (props: AccordionTitlePropsType) => {
     debugger
     console.log("AccordionTitle rendering")
     return (
@@ -26,8 +29,12 @@ const AccordionTitle = (props: any) => {
     );
 }
 
+type AccordionBodyPropsType = {
+    list: Array<string>
+}
 
-const AccordionBody = (props: any) => {
+
+const AccordionBody = (props: AccordionBodyPropsType) => {
     debugger
     console.log("AccordionBody rendering")
     if (props.list) {
