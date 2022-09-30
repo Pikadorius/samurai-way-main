@@ -1,11 +1,16 @@
 import React from "react";
 
-const Accordion = (props: any) => {
+type AccordionPropsType = {
+    title: string,
+    list: object
+}
+
+const Accordion = (props: AccordionPropsType) => {
     console.log("Accordion rendering")
     return (
         <div>
             <AccordionTitle title={props.title}/>
-            <AccordionBody/>
+            <AccordionBody list={props.list}/>
         </div>
     );
 }
@@ -22,17 +27,27 @@ const AccordionTitle = (props: any) => {
 }
 
 
-const AccordionBody = () => {
+const AccordionBody = (props: any) => {
+    debugger
     console.log("AccordionBody rendering")
-    return (
-        <div>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-        </div>
-    );
+    if (props.list) {
+        return (
+            <div>
+                <ol>
+                    <li>{props.list[0]}</li>
+                    <li>{props.list[1]}</li>
+                    <li>{props.list[2]}</li>
+                </ol>
+            </div>
+        );
+    }
+    else return (
+        <ol>
+            <li>Not defined</li>
+            <li>Not defined</li>
+            <li>Not defined</li>
+        </ol>
+    )
 }
 
 export default Accordion;

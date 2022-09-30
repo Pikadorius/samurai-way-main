@@ -20,7 +20,15 @@ function App() {
             <Technologies/>
             <Rating value={4}/>
             <Footer/>
-            <Accordion title={"I am new Accordion Title"}/>
+            <Accordion title={"Menu"} list={["Porridge", "Pizza", "Meat"]}/>
+            <Accordion title={"Menu 2"} list={["Tea", "Coffee", "Water"]}/>
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
+            <Rating value={6}/>
         </div>
     );
 }
