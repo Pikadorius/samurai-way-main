@@ -2,15 +2,23 @@ import React from "react";
 
 type AccordionPropsType = {
     title: string,
-    list: Array<string>
+    list: Array<string>,
+    collapsed: boolean,
 }
 
 const Accordion = (props: AccordionPropsType) => {
     console.log("Accordion rendering")
-    return (
+    if (!props.collapsed) {
+        return (
+            <div>
+                <AccordionTitle title={props.title}/>
+                <AccordionBody list={props.list}/>
+            </div>
+        );
+    }
+    else return (
         <div>
             <AccordionTitle title={props.title}/>
-            <AccordionBody list={props.list}/>
         </div>
     );
 }
@@ -47,8 +55,7 @@ const AccordionBody = (props: AccordionBodyPropsType) => {
                 </ol>
             </div>
         );
-    }
-    else return (
+    } else return (
         <ol>
             <li>Not defined</li>
             <li>Not defined</li>
