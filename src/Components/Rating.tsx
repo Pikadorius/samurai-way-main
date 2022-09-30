@@ -67,7 +67,11 @@ const Rating = (props: RatingPropsType) => {
     );
 }
 
-const Star = (props: any) => {
+type StarPropsType = {
+    selected: boolean,
+}
+
+const Star = (props: StarPropsType) => {
     console.log("Star rendering")
     return props.selected?(<span><b> star </b></span>):(<span> star </span>);
 }
