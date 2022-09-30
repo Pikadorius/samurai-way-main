@@ -1,12 +1,12 @@
 import React from "react";
 
 type RatingPropsType = {
-    value: number
+    value: 0 | 1 | 2 | 3 | 4 | 5,
 }
 
 const Rating = (props: RatingPropsType) => {
     console.log("Rating rendering")
-    if (props.value === 0 || props.value>5) {
+    if (props.value === 0) {
         return (
             <div>
                 <Star selected={false}/>
