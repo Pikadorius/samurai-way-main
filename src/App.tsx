@@ -12,7 +12,7 @@ function App() {
     return (
         <div className="App">
             <Header/>
-            <Welcome title={"Hello!"}/>
+            <Welcome title={"Wake the fuck up, Samurai! We have a city to BURN!"}/>
             <Accordion title={"You CAN do it, just follow these directions:"} list={["Stand your ground", "Step by step", "Never give UP"]} collapsed={false}/>
             <Rating value={3}/>
             <Accordion title={"Need to know:"} list={["HTML", "CSS", "JS"]} collapsed={false}/>
