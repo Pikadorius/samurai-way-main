@@ -22,12 +22,12 @@ function App() {
             <Footer/>
             <Accordion title={"Menu"} list={["Porridge", "Pizza", "Meat"]} collapsed={false}/>
             <Accordion title={"Menu 2"} list={["Tea", "Coffee", "Water"]} collapsed={true}/>
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
             <Rating value={5}/>
+            <Rating value={4}/>
+            <Rating value={3}/>
+            <Rating value={2}/>
+            <Rating value={1}/>
+            <Rating value={0}/>
         </div>
     );
 }
