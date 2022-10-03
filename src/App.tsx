@@ -13,13 +13,21 @@ function App() {
         <div className="App">
             <Header/>
             <Welcome title={"Wake the fuck up, Samurai! We have a city to BURN!"}/>
-            <Accordion title={"You CAN do it, just follow these directions:"} list={["Stand your ground", "Step by step", "Never give UP"]} collapsed={false}/>
+            <Accordion title={"You CAN do it, just follow these directions:"}
+                       list={["Stand your ground", "Step by step", "Never give UP"]}
+                       collapsed={false}/>
             <Rating value={3}/>
-            <Accordion title={"Need to know:"} list={["HTML", "CSS", "JS"]} collapsed={false}/>
+            <Accordion title={"Need to know:"}
+                       list={["HTML", "CSS", "JS"]}
+                       collapsed={false}/>
             <Rating value={4}/>
-            <Accordion title={"Menu"} list={["Porridge", "Pizza", "Meat"]} collapsed={false}/>
+            <Accordion title={"Menu"}
+                       list={["Porridge", "Pizza", "Meat"]}
+                       collapsed={false}/>
             <Rating value={4}/>
-            <Accordion title={"Menu 2"} list={["Tea", "Coffee", "Water"]} collapsed={false}/>
+            <Accordion title={"Menu 2"}
+                       list={["Tea", "Coffee", "Water"]}
+                       collapsed={false}/>
             <Rating value={5}/>
             <Footer/>
         </div>
