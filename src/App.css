@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  width: 90%;
+  width: 70%;
   border: 2px solid slategrey;
   margin: 20px auto;
   padding: 20px;
@@ -42,7 +42,7 @@
 }
 
 ul, ol {
-  width: 25%;
+  width: 40%;
   margin: auto auto;
   padding: 0;
   padding-bottom: 20px;
@@ -58,7 +58,7 @@ li {
 .page-header {
   display: flex;
   justify-content: space-around;
-  list-style: inside;
+  list-style: none;
 }
 
 .break_line {
@@ -67,4 +67,8 @@ li {
   width: 60%;
   height: 10px;
   background-color: #282c34;
+}
+
+.page-header li {
+  width: 100px;
 }
