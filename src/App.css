@@ -61,11 +61,6 @@ li {
   list-style: inside;
 }
 
-.important {
-  color: red;
-  text-transform: uppercase;
-}
-
 .break_line {
   padding: 0;
   margin: 20px auto;

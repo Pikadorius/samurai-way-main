@@ -4,7 +4,7 @@ let Recommendations = () => {
     console.log("Recommendations rendering")
     return (
         <div>
-            <p className="important">You CAN do it, just follow these directions:</p>
+            <p>You CAN do it, just follow these directions:</p>
             <ul>
                 <li>Stand your ground</li>
                 <li>Step by step</li>
