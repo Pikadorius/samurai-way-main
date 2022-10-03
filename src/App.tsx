@@ -2,8 +2,6 @@ import React from 'react';
 import './App.css';
 import Header from "./Components/Header";
 import Welcome from "./Components/Welcome";
-import Recommendations from "./Components/Recommendations";
-import Technologies from "./Components/Technologies";
 import Footer from "./Components/Footer";
 import Accordion from "./Components/Accordion";
 import Rating from "./Components/Rating";
@@ -15,18 +13,14 @@ function App() {
         <div className="App">
             <Header/>
             <Welcome title={"Hello!"}/>
-            <Recommendations/>
+            <Accordion title={"You CAN do it, just follow these directions:"} list={["Stand your ground", "Step by step", "Never give UP"]} collapsed={false}/>
             <Rating value={3}/>
-            <Technologies/>
+            <Accordion title={"Need to know:"} list={["HTML", "CSS", "JS"]} collapsed={false}/>
             <Rating value={4}/>
             <Accordion title={"Menu"} list={["Porridge", "Pizza", "Meat"]} collapsed={false}/>
+            <Rating value={4}/>
             <Accordion title={"Menu 2"} list={["Tea", "Coffee", "Water"]} collapsed={false}/>
             <Rating value={5}/>
-            <Rating value={4}/>
-            <Rating value={3}/>
-            <Rating value={2}/>
-            <Rating value={1}/>
-            <Rating value={0}/>
             <Footer/>
         </div>
     );
