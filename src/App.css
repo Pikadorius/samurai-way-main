@@ -1,7 +1,8 @@
 .App {
   text-align: center;
   width: 70%;
-  border: 2px solid slategrey;
+  /* border: 2px solid slategrey; */
+  border-radius: 50px;
   margin: 40px auto;
   padding: 20px;
   background: rgb(2,0,36);
@@ -63,6 +64,10 @@ li {
   display: flex;
   justify-content: space-around;
   list-style: none;
+}
+
+.page-header li {
+  text-align: center;
 }
 
 .break_line {
