@@ -1,12 +1,11 @@
 .App {
   text-align: center;
   width: 70%;
-  /* border: 2px solid slategrey; */
+  border: 5px solid #14471E;
   border-radius: 50px;
   margin: 40px auto;
   padding: 20px;
-  background: rgb(2,0,36);
-  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(121,9,62,1) 48%, rgba(0,212,255,1) 100%);
+  background-color: #68904D;
   color: white;
 }
 
@@ -56,8 +55,9 @@ li {
   margin: 5px 0;
   text-align: left;
   padding: 10px;
-  border: 1px solid antiquewhite;
+  border: 2px solid #14471E;
   border-radius: 10px;
+  background-color: #EE9B01;
 }
 
 .page-header {
@@ -75,8 +75,7 @@ li {
   margin: 20px auto;
   width: 90%;
   height: 10px;
-  background: rgb(253,187,45);
-  background: linear-gradient(90deg, rgba(253,187,45,1) 0%, rgba(126,132,190,1) 49%, rgba(253,187,45,1) 100%);
+  background-color: #14471E;
 }
 
 .page-header li {
@@ -89,4 +88,8 @@ a {
 
 a:hover {
   color: red;
+}
+
+h1, h2, h3 {
+  color: #14471E;
 }
