@@ -11,7 +11,7 @@ function App() {
     console.log("App rendering")
     return (
         <div className="App">
-            <Header/>
+            <Header title={"Choose your destiny!"}/>
             <Welcome title={"Wake the fuck up, Samurai! We have a city to BURN!"}/>
             <Accordion title={"You CAN do it, just follow these directions:"}
                        list={["Stand your ground", "Step by step", "Never give UP"]}
