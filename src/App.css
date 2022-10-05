@@ -2,8 +2,11 @@
   text-align: center;
   width: 70%;
   border: 2px solid slategrey;
-  margin: 20px auto;
+  margin: 40px auto;
   padding: 20px;
+  background: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(121,9,62,1) 48%, rgba(0,212,255,1) 100%);
+  color: white;
 }
 
 .App-logo {
@@ -52,7 +55,8 @@ li {
   margin: 5px 0;
   text-align: left;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid antiquewhite;
+  border-radius: 10px;
 }
 
 .page-header {
@@ -64,11 +68,20 @@ li {
 .break_line {
   padding: 0;
   margin: 20px auto;
-  width: 60%;
+  width: 90%;
   height: 10px;
-  background-color: #282c34;
+  background: rgb(253,187,45);
+  background: linear-gradient(90deg, rgba(253,187,45,1) 0%, rgba(126,132,190,1) 49%, rgba(253,187,45,1) 100%);
 }
 
 .page-header li {
   width: 100px;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: red;
 }
