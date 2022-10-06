@@ -16,19 +16,19 @@ function App() {
             <Accordion titleValue={"You CAN do it, just follow these directions:"}
                        listValue={["Stand your ground", "Step by step", "Never give UP"]}
                        collapsed={false}/>
-            <Rating value={3}/>
+            <Rating value={3} color={"red"}/>
             <Accordion titleValue={"Need to know:"}
                        listValue={["HTML", "CSS", "JS"]}
                        collapsed={false}/>
-            <Rating value={4}/>
+            <Rating value={4} color={"red"}/>
             <Accordion titleValue={"Menu"}
                        listValue={["Porridge", "Pizza", "Meat"]}
                        collapsed={false}/>
-            <Rating value={4}/>
+            <Rating value={4} color={"red"}/>
             <Accordion titleValue={"Menu 2"}
                        listValue={["Tea", "Coffee"]}
-                       collapsed={false}/>
-            <Rating value={5}/>
+                       collapsed={true}/>
+            <Rating value={5} color={"red"}/>
             <Footer/>
         </div>
     );

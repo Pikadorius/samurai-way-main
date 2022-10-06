@@ -2,6 +2,7 @@ import React from "react";
 
 type RatingPropsType = {
     value: 0 | 1 | 2 | 3 | 4 | 5,
+    color: string,
 }
 
 const Rating = (props: RatingPropsType) => {
