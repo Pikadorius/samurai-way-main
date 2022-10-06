@@ -15,8 +15,7 @@ const Accordion = (props: AccordionPropsType) => {
                 <AccordionBody list={props.list}/>
             </div>
         );
-    }
-    else return (
+    } else return (
         <div>
             <AccordionTitle title={props.title}/>
         </div>
@@ -45,23 +44,15 @@ type AccordionBodyPropsType = {
 const AccordionBody = (props: AccordionBodyPropsType) => {
     debugger
     console.log("AccordionBody rendering")
-    if (props.list) {
-        return (
-            <div>
-                <ol>
-                    <li>{props.list[0]}</li>
-                    <li>{props.list[1]}</li>
-                    <li>{props.list[2]}</li>
-                </ol>
-            </div>
-        );
-    } else return (
-        <ol>
-            <li>Not defined</li>
-            <li>Not defined</li>
-            <li>Not defined</li>
-        </ol>
-    )
+    return (
+        <div>
+            <ol>
+                <li>{props.list[0]}</li>
+                <li>{props.list[1]}</li>
+                <li>{props.list[2]}</li>
+            </ol>
+        </div>
+    );
 }
 
 export default Accordion;

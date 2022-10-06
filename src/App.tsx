@@ -26,7 +26,7 @@ function App() {
                        collapsed={false}/>
             <Rating value={4}/>
             <Accordion title={"Menu 2"}
-                       list={["Tea", "Coffee", "Water"]}
+                       list={["Tea", "Coffee"]}
                        collapsed={false}/>
             <Rating value={5}/>
             <Footer/>
