@@ -1,8 +1,8 @@
 import React from "react";
 
 type AccordionPropsType = {
-    title: string,
-    list: Array<string>,
+    titleValue: string,
+    listValue: Array<string>,
     collapsed: boolean,
 }
 
@@ -11,13 +11,13 @@ const Accordion = (props: AccordionPropsType) => {
     if (!props.collapsed) {
         return (
             <div>
-                <AccordionTitle title={props.title}/>
-                <AccordionBody list={props.list}/>
+                <AccordionTitle title={props.titleValue}/>
+                <AccordionBody list={props.listValue}/>
             </div>
         );
     } else return (
         <div>
-            <AccordionTitle title={props.title}/>
+            <AccordionTitle title={props.titleValue}/>
         </div>
     );
 }
