@@ -93,3 +93,12 @@ a:hover {
 h1, h2, h3 {
   color: #14471E;
 }
+
+
+.homework1 {
+  border: 1px solid black;
+}
+
+.homework1 td {
+  border: 2px solid red;
+}
