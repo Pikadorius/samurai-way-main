@@ -5,11 +5,11 @@ type CarTablePropsType = {
     list: Array<TopCarPropsType>
 }
 
-const CarTable = (props:CarTablePropsType ) => {
+const CarTable = (props:CarTablePropsType) => {
     return (
         <div>
             <table className={"homework1"}>
-                {props.list.map(item=><tr><td>{item.manufacturer}</td><td>{item.model}</td></tr>)}
+                {props.list.map((item,index)=><tr key={index+1}><th>{index+1}</th><td>{item.manufacturer}</td><td>{item.model}</td></tr>)}
             </table>
         </div>
     );
