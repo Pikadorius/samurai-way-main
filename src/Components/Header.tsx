@@ -9,9 +9,18 @@ const Header = (props: HeaderPropsType) => {
     return (
         <div>
             <h2>{props.title}</h2>
-                <button>Home</button>
-                <button>News</button>
-                <button>Current</button>
+            <button onClick={() => {
+                console.log('HOME')
+            }}>Home
+            </button>
+            <button onClick={() => {
+                console.log('NEWS')
+            }}>News
+            </button>
+            <button onClick={() => {
+                console.log("CURRENT")
+            }}>Current
+            </button>
         </div>
     );
 }
