@@ -47,6 +47,7 @@ function App() {
     return (
         <div className="App">
             <Header title={"Choose your destiny!"}/>
+            <CarTable list={topCars}/>
             <Welcome title={"Wake the fuck up, Samurai! We have a city to BURN!"}/>
             <Accordion titleValue={"You CAN do it, just follow these directions:"}
                        listValue={["Stand your ground", "Step by step", "Never give UP", "LOL"]}
@@ -64,7 +65,6 @@ function App() {
                        listValue={["Tea", "Coffee"]}
                        collapsed={true}/>
             <Rating value={5} color={"red"}/>
-            <CarTable list={topCars}/>
             <NewComponent students={students}/>
             <Footer/>
         </div>
