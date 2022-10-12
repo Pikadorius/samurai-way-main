@@ -66,28 +66,12 @@ li {
   list-style: none;
 }
 
-.page-header li {
-  text-align: center;
-}
-
 .break_line {
   padding: 0;
   margin: 20px auto;
   width: 90%;
   height: 10px;
   background-color: #14471E;
-}
-
-.page-header li {
-  width: 100px;
-}
-
-a {
-  color: white;
-}
-
-a:hover {
-  color: red;
 }
 
 h1, h2, h3 {
@@ -101,4 +85,12 @@ h1, h2, h3 {
 
 td, th {
   border: 2px solid red;
+}
+
+button {
+  padding: 10px;
+  margin: 0 20px;
+  width: 100px;
+  border-radius: 10px;
+  border: none;
 }
