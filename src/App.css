@@ -99,6 +99,6 @@ h1, h2, h3 {
   border: 1px solid black;
 }
 
-.homework1 td {
+td, th {
   border: 2px solid red;
 }
