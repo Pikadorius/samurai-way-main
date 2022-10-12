@@ -9,11 +9,9 @@ const Header = (props: HeaderPropsType) => {
     return (
         <div>
             <h2>{props.title}</h2>
-            <ul className="page-header">
-                <li><a href="src/Components/Header#">Home</a></li>
-                <li><a href="src/Components/Header#">News</a></li>
-                <li><a href="src/Components/Header#">Current</a></li>
-            </ul>
+                <button>Home</button>
+                <button>News</button>
+                <button>Current</button>
         </div>
     );
 }
