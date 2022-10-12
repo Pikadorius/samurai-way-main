@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import Accordion from "./Components/Accordion";
 import Rating from "./Components/Rating";
 import CarTable from "./Components/CarTable";
+import NewComponent from "./Components/NewComponent";
 
 
 export type TopCarPropsType = {
@@ -18,6 +19,27 @@ const topCars: Array<TopCarPropsType> = [
     {manufacturer: 'Mercedes', model: 'e63s'},
     {manufacturer: 'Audi', model: 'rs6'}
 ];
+
+export type StudentsPropsType = {
+    id: number,
+    name: string,
+    age: number
+}
+
+const students: Array<StudentsPropsType> = [
+    {id: 1, name: "James", age: 8},
+    {id: 2, name: "Robert", age: 18},
+    {id: 3, name: "John", age: 28},
+    {id: 4, name: "Michael", age: 38},
+    {id: 5, name: "William", age: 48},
+    {id: 6, name: "David", age: 58},
+    {id: 7, name: "Richard", age: 68},
+    {id: 8, name: "Joseph", age: 78},
+    {id: 9, name: "Thomas", age: 88},
+    {id: 10, name: "Charles", age: 98},
+    {id: 11, name: "Christopher", age: 100},
+];
+
 
 function App() {
     console.log("App rendering");
@@ -43,6 +65,7 @@ function App() {
                        collapsed={true}/>
             <Rating value={5} color={"red"}/>
             <CarTable list={topCars}/>
+            <NewComponent students={students}/>
             <Footer/>
         </div>
     );
