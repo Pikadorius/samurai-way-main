@@ -27,7 +27,6 @@ type AccordionTitlePropsType = {
 }
 
 const AccordionTitle = (props: AccordionTitlePropsType) => {
-    debugger
     console.log("AccordionTitle rendering")
     return (
         <div>
@@ -42,12 +41,11 @@ type AccordionBodyPropsType = {
 
 
 const AccordionBody = (props: AccordionBodyPropsType) => {
-    debugger
     console.log("AccordionBody rendering")
     return (
         <div>
             <ol>
-                {props.list.map(item=><li>{item}</li>)}
+                {props.list.map((item,index)=><li key={index+1}>{item}</li>)}
             </ol>
         </div>
     );

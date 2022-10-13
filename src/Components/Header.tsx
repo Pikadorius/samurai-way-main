@@ -22,8 +22,8 @@ const Header = (props: HeaderPropsType) => {
     return (
         <div>
             <h2>{props.title}</h2>
-            <button onClick={()=>onClickHandler("Vasya")}>News</button>
-            <button onClick={()=>onClickHandler("Petya")}>Subscribe</button>
+            <button onClick={(event)=>onClickHandler("Egor")}>News</button>
+            <button onClick={(event)=>onClickHandler("Petya")}>Subscribe</button>
         </div>
     );
 }

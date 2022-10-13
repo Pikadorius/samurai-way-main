@@ -6,7 +6,6 @@ type NewComponentPropsType = {
 }
 
 const NewComponent = (props: NewComponentPropsType) => {
-    debugger
     return (
         <div>
             <ol>
