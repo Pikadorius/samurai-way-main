@@ -13,8 +13,8 @@ const Header = (props: HeaderPropsType) => {
         console.log(value,age);
     }
 
-    const Button2Foo = (value: string) => {
-        console.log(value);
+    const Button2Foo = () => {
+        console.log("i am stupid button");
     }
 
 
@@ -22,7 +22,7 @@ const Header = (props: HeaderPropsType) => {
         <div>
             <h1>{props.title}</h1>
             <Button name={"News"} callBack={() => Button1Foo("i am button 1",21)}/>
-            <Button name={"About me"} callBack={() => Button2Foo("i am button 2")}/>
+            <Button name={"Stupid Button"} callBack={Button2Foo}/>
         </div>
     );
 }
