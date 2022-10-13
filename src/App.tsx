@@ -7,6 +7,7 @@ import Accordion from "./Components/Accordion";
 import Rating from "./Components/Rating";
 import CarTable from "./Components/CarTable";
 import NewComponent from "./Components/NewComponent";
+import StateExample from './Components/StateExample';
 
 
 export type TopCarPropsType = {
@@ -47,6 +48,7 @@ function App() {
     return (
         <div className="App">
             <Header title={"Choose your destiny!"}/>
+            <StateExample/>
             <CarTable list={topCars}/>
             <Welcome title={"Wake the fuck up, Samurai! We have a city to BURN!"}/>
             <Accordion titleValue={"You CAN do it, just follow these directions:"}
