@@ -101,3 +101,8 @@ button {
     width: 200px;
     margin: 50px auto;
 }
+
+.BorderedComponent {
+    border:3px solid black;
+    margin: 10px;
+}

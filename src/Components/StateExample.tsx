@@ -14,7 +14,7 @@ const StateExample = () => {
 
 
     return (
-        <div>
+        <div className={'BorderedComponent'}>
             <h1>{a}</h1>
             <button onClick={OnClickHandler}>Number of clicks</button>
             <button onClick={ResetButton}>Reset</button>
