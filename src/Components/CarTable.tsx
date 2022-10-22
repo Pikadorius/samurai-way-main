@@ -2,7 +2,7 @@ import React from 'react';
 import {TopCarPropsType} from "../App";
 
 type CarTablePropsType = {
-    list: Array<TopCarPropsType>
+    cars: Array<TopCarPropsType>
 }
 
 const CarTable = (props: CarTablePropsType) => {
@@ -11,8 +11,13 @@ const CarTable = (props: CarTablePropsType) => {
         <div className={'test'}>
             <table>
                 <tbody>
-                {props.list.map((item, index) => <tr key={index + 1}>
-                    <th>{index + 1}</th>
+                <tr>
+                    <th>№</th>
+                    <th>Mark</th>
+                    <th>Model</th>
+                </tr>
+                {props.cars.map((item, index) => <tr key={index + 1}>
+                    <td>{index + 1}</td>
                     <td>{item.manufacturer}</td>
                     <td>{item.model}</td>
                 </tr>)}
