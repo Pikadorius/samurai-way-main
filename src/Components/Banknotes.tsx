@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import Button from './Button';
-import {log} from 'util';
 
 const Banknotes = () => {
     console.log('Banknotes rendering')
@@ -23,12 +21,12 @@ const Banknotes = () => {
         {banknots: 'RUBLS', value: 50, number: ' v1234567890'},
     ]);
 
-    const [filter, setFilter]=useState("All");
+    const [filter, setFilter] = useState("All");
 
     let currentMoney: Array<BanknotesType> = money;
-    currentMoney = filter==="Rubles" ? money.filter(item => item.banknots === "RUBLS"): filter==="Dollars"? money.filter(item => item.banknots === "Dollars"): money;
+    currentMoney = filter === "Rubles" ? money.filter(item => item.banknots === "RUBLS") : filter === "Dollars" ? money.filter(item => item.banknots === "Dollars") : money;
 
-    const onClickFilterHandler=(nameButton: 'Rubles' | 'Dollars' | 'All')=>{
+    const onClickFilterHandler = (nameButton: 'Rubles' | 'Dollars' | 'All') => {
         setFilter(nameButton);
     }
 
@@ -41,7 +39,7 @@ const Banknotes = () => {
                     {
                         currentMoney.map((item, index) => {
                             return (
-                                <tr key={index + 1}>
+                                <tr key={index}>
                                     <td>{item.banknots}</td>
                                     <td>{item.value}</td>
                                     <td>{item.number}</td>
@@ -52,9 +50,9 @@ const Banknotes = () => {
                     </tbody>
                 </table>
             </div>
-            <button onClick={()=>onClickFilterHandler("All")}>All</button>
- //           <button onClick={()=>onClickFilterHandler("Rubles")}>Rubles</button>
-            <button onClick={()=>onClickFilterHandler("Dollars")}>Dollars</button>
+            <button onClick={() => onClickFilterHandler("All")}>All</button>
+            <button onClick={() => onClickFilterHandler("Rubles")}>Rubles</button>
+            <button onClick={() => onClickFilterHandler("Dollars")}>Dollars</button>
         </div>
     );
 }

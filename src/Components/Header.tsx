@@ -5,7 +5,7 @@ type HeaderPropsType = {
     title: string,
 }
 
-const Header = (props: HeaderPropsType) => {
+const Header = ({title}:HeaderPropsType) => {
     console.log("Header rendering");
 
 
@@ -20,7 +20,7 @@ const Header = (props: HeaderPropsType) => {
 
     return (
         <div>
-            <h1>{props.title}</h1>
+            <h1>{title}</h1>
             <Button name={"News"} callBack={() => Button1Foo("i am button 1",21)}/>
             <Button name={"Stupid Button"} callBack={Button2Foo}/>
         </div>

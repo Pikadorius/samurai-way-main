@@ -6,7 +6,7 @@ type AccordionPropsType = {
     collapsed: boolean,
 }
 
-const Accordion = (props: AccordionPropsType) => {
+const Accordion:React.FC<AccordionPropsType>= (props) => {
     console.log("Accordion rendering")
     if (!props.collapsed) {
         return (
