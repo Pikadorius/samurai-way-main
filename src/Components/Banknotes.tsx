@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-
+import Button from './Button';
 const Banknotes = () => {
     console.log('Banknotes rendering')
 
+    type FilterType = 'Rubles' | 'Dollars' | 'All';
 
     type BanknotesType = {
         banknots: string
@@ -26,7 +27,7 @@ const Banknotes = () => {
     let currentMoney: Array<BanknotesType> = money;
     currentMoney = filter === "Rubles" ? money.filter(item => item.banknots === "RUBLS") : filter === "Dollars" ? money.filter(item => item.banknots === "Dollars") : money;
 
-    const onClickFilterHandler = (nameButton: 'Rubles' | 'Dollars' | 'All') => {
+    const onClickFilterHandler = (nameButton: FilterType) => {
         setFilter(nameButton);
     }
 
@@ -47,12 +48,21 @@ const Banknotes = () => {
                             )
                         })
                     }
+                    <tr>
+                        <td><input type="text"/></td>
+                        <td><input type="text"/></td>
+                        <td><input type="text"/></td>
+                    </tr>
                     </tbody>
                 </table>
+                <button>+</button>
             </div>
-            <button onClick={() => onClickFilterHandler("All")}>All</button>
+            {/*<button onClick={() => onClickFilterHandler("All")}>All</button>
             <button onClick={() => onClickFilterHandler("Rubles")}>Rubles</button>
-            <button onClick={() => onClickFilterHandler("Dollars")}>Dollars</button>
+            <button onClick={() => onClickFilterHandler("Dollars")}>Dollars</button>*/}
+            <Button name={'All'} callBack={()=>onClickFilterHandler('All')}/>
+            <Button name={'Rubls'} callBack={()=>onClickFilterHandler("Rubles")}/>
+            <Button name={'Dollars'} callBack={()=>onClickFilterHandler("Dollars")}/>
         </div>
     );
 }
