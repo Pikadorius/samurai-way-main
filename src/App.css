@@ -90,15 +90,6 @@ td, th {
     max-width: 33%;
 }
 
-button {
-    padding: 10px;
-    margin: 0 20px;
-    width: 100px;
-    border-radius: 10px;
-    border: none;
-}
-
-
 .test {
     border: 2px solid black;
     margin: 50px 50px;
@@ -110,6 +101,6 @@ button {
 }
 
 input {
-    display: block;
+    display: inline-block;
     width: 70px;
 }

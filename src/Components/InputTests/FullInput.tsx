@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import s from './InputTests.module.css';
+import s from './FullInput.module.css';
 
-const InputTests = () => {
+const FullInput = () => {
     const [message, setMessage] = useState([
             {message: 'message1'},
             {message: 'message2'},
@@ -26,4 +26,4 @@ const InputTests = () => {
     );
 }
 
-export default InputTests;
+export default FullInput;

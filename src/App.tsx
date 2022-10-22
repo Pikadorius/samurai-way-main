@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Header from "./Components/Header";
 import Welcome from "./Components/Welcome";
@@ -10,7 +10,7 @@ import NewComponent from "./Components/NewComponent";
 import StateExample from './Components/StateExample';
 import Banknotes from './Components/Banknotes';
 import Button from './Components/Button';
-import InputTests from './Components/InputTests/InputTests';
+import FullInput from './Components/InputTests/FullInput';
 
 
 export type TopCarPropsType = {
@@ -60,7 +60,7 @@ function App() {
     return (
         <div className="App">
             <Header title={"Choose your destiny!"}/>
-            <InputTests/>
+            <FullInput/>
             <Banknotes/>
             <StateExample/>
             <CarTable cars={topCars}/>
