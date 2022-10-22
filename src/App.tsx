@@ -9,6 +9,7 @@ import CarTable from "./Components/CarTable";
 import NewComponent from "./Components/NewComponent";
 import StateExample from './Components/StateExample';
 import Banknotes from './Components/Banknotes';
+import Button from './Components/Button';
 
 
 export type TopCarPropsType = {
@@ -43,6 +44,15 @@ const students: Array<StudentsPropsType> = [
 ];
 
 
+const acceptFoo = () => {
+    console.log('You accepted all sudjestions')
+}
+const dislineFoo = () => {
+    console.log('You dislined all sudjestions')
+}
+
+
+
 function App() {
     console.log("App rendering");
 
@@ -51,7 +61,7 @@ function App() {
             <Header title={"Choose your destiny!"}/>
             <Banknotes/>
             <StateExample/>
-            <CarTable list={topCars}/>
+            <CarTable cars={topCars}/>
             <Welcome title={"Wake the fuck up, Samurai! We have a city to BURN!"}/>
             <Accordion titleValue={"You CAN do it, just follow these directions:"}
                        listValue={["Stand your ground", "Step by step", "Never give UP", "LOL"]}
@@ -70,6 +80,8 @@ function App() {
                        collapsed={true}/>
             <Rating value={5} color={"red"}/>
             <NewComponent students={students}/>
+            <Button name={"Accept all"} callBack={acceptFoo}/>
+            <Button name={"Disline"} callBack={dislineFoo}/>
             <Footer/>
         </div>
     );
