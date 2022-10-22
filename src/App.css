@@ -79,12 +79,15 @@ h1, h2, h3 {
 
 table {
     border-collapse: collapse;
-    width: 200px;
+    width: 300px;
+    text-align: center;
 }
 
 td, th {
-    border: 5px double black;
+    border: 2px solid black;
     text-align: left;
+    padding: 5px;
+    max-width: 33%;
 }
 
 button {
@@ -98,11 +101,16 @@ button {
 
 .test {
     border: 2px solid black;
-    width: 200px;
+    width: 400px;
     margin: 50px auto;
 }
 
 .BorderedComponent {
     border:3px solid black;
     margin: 10px;
+}
+
+input {
+    display: block;
+    width: 100px;
 }
