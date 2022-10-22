@@ -10,6 +10,7 @@ import NewComponent from "./Components/NewComponent";
 import StateExample from './Components/StateExample';
 import Banknotes from './Components/Banknotes';
 import Button from './Components/Button';
+import InputTests from './Components/InputTests/InputTests';
 
 
 export type TopCarPropsType = {
@@ -59,6 +60,7 @@ function App() {
     return (
         <div className="App">
             <Header title={"Choose your destiny!"}/>
+            <InputTests/>
             <Banknotes/>
             <StateExample/>
             <CarTable cars={topCars}/>

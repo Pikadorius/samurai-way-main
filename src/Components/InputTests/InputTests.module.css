@@ -1,0 +1,9 @@
+.active {
+    text-align: start;
+    border: 1px solid black;
+
+}
+
+.active button {
+    width: 50px;
+}
