@@ -5,12 +5,12 @@ type NewComponentPropsType = {
     students: Array<StudentsPropsType>
 }
 
-const NewComponent = (props: NewComponentPropsType) => {
+const NewComponent = ({students}: NewComponentPropsType) => {
     return (
         <div>
             <ol>
-                {props.students.map(item => {
-                    return <li key={item.id}>Имя - {item.name}. Возраст - {item.age}</li>
+                {students.map(item => {
+                    return <li key={item.id}>Name: {item.name}. Age: {item.age}</li>
                 })}
             </ol>
         </div>
