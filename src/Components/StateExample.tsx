@@ -19,8 +19,6 @@ const StateExample = () => {
     return (
         <div className={'BorderedComponent'}>
             <h1>{a}</h1>
-            {/*<button onClick={IncreaseValue}>Number of clicks</button>
-            <button onClick={ResetButton}>Reset</button>*/}
             <Button name={'Increase'} callBack={IncreaseValue}/>
             <Button name={'Decrease'} callBack={DecreaseValue}/>
             <Button name={'Reset'} callBack={ResetButton}/>
