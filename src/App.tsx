@@ -7,6 +7,7 @@ import StateExample from './Components/StateExample';
 import Banknotes from './Components/Banknotes';
 import NewComponentForInputs from './Components/NewComponentForInputs';
 import NewComponentForInputs2 from './Components/NewComponentForInputs2';
+import TodoList from './Components/ToDoList/TodoList';
 
 export type StudentsPropsType = {
     id: number,
@@ -33,8 +34,9 @@ function App() {
 
     return (
         <div className="App">
-            <NewComponentForInputs/>
-            <NewComponentForInputs2/>
+            <TodoList/>
+            {/*<NewComponentForInputs/>
+            <NewComponentForInputs2/>*/}
             <Banknotes/>
             <StateExample/>
             <Accordion titleValue={"You CAN do it, just follow these directions:"}
