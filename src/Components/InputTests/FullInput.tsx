@@ -1,27 +1,17 @@
-import React, {useState} from 'react';
-import s from './FullInput.module.css';
+import React, {ChangeEvent, useState} from 'react';
+
 
 const FullInput = () => {
-    const [message, setMessage] = useState([
-            {message: 'message1'},
-            {message: 'message2'},
-            {message: 'message3'},
-            {message: 'message4'},
-            {message: 'message5'}
-        ]
-    )
+    let [title, setTitle] = useState('')
+    console.log('this is title -', title);
 
+    const onChangeInputHandler = (event:ChangeEvent<HTMLInputElement>)=> {
+        setTitle(event.currentTarget.value);
+    }
     return (
-        <div className={s.active}>
-            <div>
-                <input/>
-                <button>+</button>
-            </div>
-            {message.map((el, index) => {
-                return (
-                    <div key={index}>{el.message}</div>
-                )
-            })}
+        <div>
+            <input onChange={onChangeInputHandler}/>
+            <button onClick={()=>{}}>+</button>
         </div>
     );
 }

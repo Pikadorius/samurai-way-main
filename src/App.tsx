@@ -11,6 +11,7 @@ import StateExample from './Components/StateExample';
 import Banknotes from './Components/Banknotes';
 import Button from './Components/Button';
 import FullInput from './Components/InputTests/FullInput';
+import NewComponentForInputs from './Components/NewComponentForInputs';
 
 
 export type TopCarPropsType = {
@@ -53,14 +54,13 @@ const dislineFoo = () => {
 }
 
 
-
 function App() {
     console.log("App rendering");
 
     return (
         <div className="App">
             <Header title={"Choose your destiny!"}/>
-            <FullInput/>
+            <NewComponentForInputs/>
             <Banknotes/>
             <StateExample/>
             <CarTable cars={topCars}/>
