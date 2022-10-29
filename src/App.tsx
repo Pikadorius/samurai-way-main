@@ -42,11 +42,11 @@ function App() {
             <Accordion titleValue={"You CAN do it, just follow these directions:"}
                        listValue={["Stand your ground", "Step by step", "Never give UP", "LOL"]}
                        collapsed={false}/>
-            <Rating value={3} color={"red"}/>
+            <Rating value={4} color={"red"}/>
             <Accordion titleValue={"Need to know:"}
                        listValue={["HTML", "CSS", "JS"]}
                        collapsed={false}/>
-            <Rating value={5} color={"red"}/>
+            <Rating value={2} color={"red"}/>
             <NewComponent students={students}/>
         </div>
     );
