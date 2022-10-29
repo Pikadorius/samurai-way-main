@@ -5,65 +5,15 @@ type RatingPropsType = {
     color: string,
 }
 
-const Rating = (props: RatingPropsType) => {
+const Rating = ({value}: RatingPropsType) => {
     console.log("Rating rendering")
-    if (props.value === 0) {
-        return (
-            <div>
-                <Star selected={false}/>
-                <Star selected={false}/>
-                <Star selected={false}/>
-                <Star selected={false}/>
-                <Star selected={false}/>
-            </div>
-        );
-    } else if (props.value === 1) {
-        return (
-            <div>
-                <Star selected={true}/>
-                <Star selected={false}/>
-                <Star selected={false}/>
-                <Star selected={false}/>
-                <Star selected={false}/>
-            </div>
-        );
-    } else if (props.value === 2) {
-        return (
-            <div>
-                <Star selected={true}/>
-                <Star selected={true}/>
-                <Star selected={false}/>
-                <Star selected={false}/>
-                <Star selected={false}/>
-            </div>
-        );
-    } else if (props.value === 3) {
-        return (
-            <div>
-                <Star selected={true}/>
-                <Star selected={true}/>
-                <Star selected={true}/>
-                <Star selected={false}/>
-                <Star selected={false}/>
-            </div>
-        );
-    } else if (props.value === 4) {
-        return (
-            <div>
-                <Star selected={true}/>
-                <Star selected={true}/>
-                <Star selected={true}/>
-                <Star selected={true}/>
-                <Star selected={false}/>
-            </div>
-        );
-    } else return (
+    return (
         <div>
-            <Star selected={true}/>
-            <Star selected={true}/>
-            <Star selected={true}/>
-            <Star selected={true}/>
-            <Star selected={true}/>
+            <Star selected={value>0}/>
+            <Star selected={value>1}/>
+            <Star selected={value>2}/>
+            <Star selected={value>3}/>
+            <Star selected={value>4}/>
         </div>
     );
 }
