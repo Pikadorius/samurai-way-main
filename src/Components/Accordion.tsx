@@ -6,20 +6,14 @@ type AccordionPropsType = {
     collapsed: boolean,
 }
 
-const Accordion:React.FC<AccordionPropsType>= (props) => {
+const Accordion:React.FC<AccordionPropsType>= ({titleValue, listValue, collapsed}) => {
     console.log("Accordion rendering")
-    if (!props.collapsed) {
         return (
             <div>
-                <AccordionTitle title={props.titleValue}/>
-                <AccordionBody list={props.listValue}/>
+                <AccordionTitle title={titleValue}/>
+                { !collapsed && <AccordionBody list={listValue}/> }
             </div>
         );
-    } else return (
-        <div>
-            <AccordionTitle title={props.titleValue}/>
-        </div>
-    );
 }
 
 type AccordionTitlePropsType = {
