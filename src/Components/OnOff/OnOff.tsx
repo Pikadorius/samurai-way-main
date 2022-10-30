@@ -3,14 +3,13 @@ import s from './OnOff.module.css'
 
 export type OnOffType = {
     turndedOn: boolean
-    change: ()=>void
+    change: () => void
 }
 
 
-
-const OnOff:React.FC<OnOffType> = ({turndedOn, change}) => {
-    const bulbClass=turndedOn?`${s.bulb} ${s.bulbOn}`:`${s.bulb} ${s.bulbOff}`
-    const armClass=turndedOn? s.armOn: `${s.armOn} ${s.armOff}`
+const OnOff: React.FC<OnOffType> = ({turndedOn, change}) => {
+    const bulbClass = turndedOn ? `${s.bulb} ${s.bulbOn}` : `${s.bulb} ${s.bulbOff}`
+    const armClass = turndedOn ? s.armOn : `${s.armOn} ${s.armOff}`
 
     return (
         <div className={s.block}>

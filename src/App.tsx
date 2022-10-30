@@ -44,7 +44,7 @@ function App() {
     return (
         <div className="App">
             <OnOff2/>
-            <UncontrolledAccordion titleValue={"Hello"} listValue={['test1','test2','test3']}/>
+            <UncontrolledAccordion titleValue={"Hello"} listValue={['test1', 'test2', 'test3']}/>
             <UncontrolledRating rating={2}/>
             <TodoList/>
             {/*<NewComponentForInputs/>
