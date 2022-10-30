@@ -44,8 +44,8 @@ function App() {
     return (
         <div className="App">
             <OnOff2/>
-            <UncontrolledRating/>
             <UncontrolledAccordion titleValue={"Hello"} listValue={['test1','test2','test3']}/>
+            <UncontrolledRating/>
             <TodoList/>
             {/*<NewComponentForInputs/>
             <NewComponentForInputs2/>*/}
@@ -55,7 +55,7 @@ function App() {
             <Accordion titleValue={"You CAN do it, just follow these directions:"}
                        listValue={["Stand your ground", "Step by step", "Never give UP", "LOL"]}
                        collapsed={!onOff}/>
-            <Rating value={4} color={"red"}/>
+            <UncontrolledRating/>
             <Accordion titleValue={"Need to know:"}
                        listValue={["HTML", "CSS", "JS"]}
                        collapsed={false}/>
