@@ -1,0 +1,50 @@
+.block {
+    display: flex;
+    border: 2px solid black;
+    border-radius:10px;
+    width: 80px;
+    height: 20px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.switch {
+    border: 1px solid black;
+    border-radius: 12px;
+    margin: 2px;
+    width: 50px;
+    padding: 0;
+    display: flex;
+}
+
+.armOn {
+    width: 25px;
+    height: 12px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: darkgreen;
+    align-self: center;
+}
+
+.armOff {
+    background-color: red;
+    margin-left: auto;
+}
+
+
+.bulb {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin: 0 auto;
+    align-self: center;
+}
+
+.bulbOn {
+    background-color: darkgreen;
+}
+
+.bulbOff {
+    background-color: red;
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./Components/Accordion";
 import Rating from "./Components/Rating";
@@ -8,6 +8,7 @@ import Banknotes from './Components/Banknotes';
 import NewComponentForInputs from './Components/NewComponentForInputs';
 import NewComponentForInputs2 from './Components/NewComponentForInputs2';
 import TodoList from './Components/ToDoList/TodoList';
+import OnOff from './Components/OnOff/OnOff';
 
 export type StudentsPropsType = {
     id: number,
@@ -32,22 +33,30 @@ const students: Array<StudentsPropsType> = [
 function App() {
     console.log("App rendering");
 
+    const [onOff, setOnOff] = useState<boolean>(true)
+    const changeSwith = () => {
+        setOnOff(!onOff)
+    }
+
+
     return (
         <div className="App">
+
             <TodoList/>
             {/*<NewComponentForInputs/>
             <NewComponentForInputs2/>*/}
             <Banknotes/>
             <StateExample/>
+            <OnOff turndedOn={onOff} change={changeSwith}/>
             <Accordion titleValue={"You CAN do it, just follow these directions:"}
                        listValue={["Stand your ground", "Step by step", "Never give UP", "LOL"]}
-                       collapsed={false}/>
+                       collapsed={!onOff}/>
             <Rating value={4} color={"red"}/>
-            <Accordion titleValue={"Need to know:"}
+           {/* <Accordion titleValue={"Need to know:"}
                        listValue={["HTML", "CSS", "JS"]}
                        collapsed={false}/>
             <Rating value={2} color={"red"}/>
-            <NewComponent students={students}/>
+            <NewComponent students={students}/>*/}
         </div>
     );
 }
