@@ -6,6 +6,7 @@
     height: 20px;
     padding: 0;
     margin: 0 auto;
+    background-color: white;
 }
 
 .switch {
@@ -15,6 +16,7 @@
     width: 50px;
     padding: 0;
     display: flex;
+    background-color: black;
 }
 
 .armOn {
