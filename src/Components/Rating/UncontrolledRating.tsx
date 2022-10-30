@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import s from './Rating.module.css';
-import rating from './rating.png'
-import norating from './norating.png'
+import rating from './full.png'
+import norating from './empty.png'
 
 
 type RatingPropsType = {}
@@ -11,7 +11,7 @@ const UncontrolledRating = (props: RatingPropsType) => {
     const [value, setValue] = useState<number>(0);
 
     return (
-        <div>
+        <div className={s.rating}>
             <Star selected={value > 0} callBack={() => setValue(1)}/>
             <Star selected={value > 1} callBack={() => setValue(2)}/>
             <Star selected={value > 2} callBack={() => setValue(3)}/>
