@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./Components/Accordion/Accordion";
-import Rating from "./Components/Rating";
+import Rating from "./Components/Rating/Rating";
 import NewComponent from "./Components/NewComponent";
 import StateExample from './Components/StateExample';
 import Banknotes from './Components/Banknotes';
@@ -11,6 +11,7 @@ import TodoList from './Components/ToDoList/TodoList';
 import OnOff from './Components/OnOff/OnOff';
 import OnOff2 from './Components/OnOff2/OnOff2';
 import UncontrolledAccordion from './Components/Accordion/UncontrolledAccordion';
+import UncontrolledRating from './Components/Rating/UncontrolledRating';
 
 export type StudentsPropsType = {
     id: number,
@@ -43,6 +44,7 @@ function App() {
     return (
         <div className="App">
             <OnOff2/>
+            <UncontrolledRating/>
             <UncontrolledAccordion titleValue={"Hello"} listValue={['test1','test2','test3']}/>
             <TodoList/>
             {/*<NewComponentForInputs/>
