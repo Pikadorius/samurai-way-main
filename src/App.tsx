@@ -10,6 +10,7 @@ import NewComponentForInputs2 from './Components/NewComponentForInputs2';
 import TodoList from './Components/ToDoList/TodoList';
 import OnOff from './Components/OnOff/OnOff';
 import OnOff2 from './Components/OnOff2/OnOff2';
+import UncontrolledAccordion from './Components/UncontrolledAccordion';
 
 export type StudentsPropsType = {
     id: number,
@@ -42,6 +43,7 @@ function App() {
     return (
         <div className="App">
             <OnOff2/>
+            <UncontrolledAccordion titleValue={"Hello"} listValue={['test1','test2','test3']}/>
             <TodoList/>
             {/*<NewComponentForInputs/>
             <NewComponentForInputs2/>*/}
