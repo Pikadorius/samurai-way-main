@@ -9,7 +9,7 @@ type AccordionPropsType = {
 
 const UncontrolledAccordion:React.FC<AccordionPropsType>= ({titleValue, listValue}) => {
     console.log("Accordion rendering")
-    const [collapsed, setCollapsed]=useState<boolean>(true)
+    const [collapsed, setCollapsed]=useState<boolean>(false)
 
         return (
             <div className={s.content}>

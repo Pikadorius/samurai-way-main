@@ -4,11 +4,13 @@ import rating from './full.png'
 import norating from './empty.png'
 
 
-type RatingPropsType = {}
+type UncontolledRatingPropsType = {
+    rating: number
+}
 
-const UncontrolledRating = (props: RatingPropsType) => {
+const UncontrolledRating:React.FC<UncontolledRatingPropsType> = ({rating}) => {
     console.log("Rating rendering")
-    const [value, setValue] = useState<number>(0);
+    const [value, setValue] = useState<number>(rating);
 
     return (
         <div className={s.rating}>

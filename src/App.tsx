@@ -36,7 +36,7 @@ const students: Array<StudentsPropsType> = [
 function App() {
     console.log("App rendering");
     const [onOff, setOnOff] = useState<boolean>(true)
-    const changeSwith = () => {
+    const changeSwitch = () => {
         setOnOff(!onOff)
     }
 
@@ -45,20 +45,21 @@ function App() {
         <div className="App">
             <OnOff2/>
             <UncontrolledAccordion titleValue={"Hello"} listValue={['test1','test2','test3']}/>
-            <UncontrolledRating/>
+            <UncontrolledRating rating={2}/>
             <TodoList/>
             {/*<NewComponentForInputs/>
             <NewComponentForInputs2/>*/}
             <Banknotes/>
             <StateExample/>
-            <OnOff turndedOn={onOff} change={changeSwith}/>
+            <OnOff turndedOn={onOff} change={changeSwitch}/>
             <Accordion titleValue={"You CAN do it, just follow these directions:"}
                        listValue={["Stand your ground", "Step by step", "Never give UP", "LOL"]}
                        collapsed={!onOff}/>
-            <UncontrolledRating/>
+            <UncontrolledRating rating={3}/>
             <Accordion titleValue={"Need to know:"}
                        listValue={["HTML", "CSS", "JS"]}
                        collapsed={false}/>
+            <UncontrolledRating rating={1}/>
             {/*<Rating value={2} color={"red"}/>
             <NewComponent students={students}/>*/}
         </div>
