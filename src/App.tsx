@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./Components/Accordion";
+import Accordion from "./Components/Accordion/Accordion";
 import Rating from "./Components/Rating";
 import NewComponent from "./Components/NewComponent";
 import StateExample from './Components/StateExample';
@@ -10,7 +10,7 @@ import NewComponentForInputs2 from './Components/NewComponentForInputs2';
 import TodoList from './Components/ToDoList/TodoList';
 import OnOff from './Components/OnOff/OnOff';
 import OnOff2 from './Components/OnOff2/OnOff2';
-import UncontrolledAccordion from './Components/UncontrolledAccordion';
+import UncontrolledAccordion from './Components/Accordion/UncontrolledAccordion';
 
 export type StudentsPropsType = {
     id: number,

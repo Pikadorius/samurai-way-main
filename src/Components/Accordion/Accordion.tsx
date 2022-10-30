@@ -1,4 +1,5 @@
 import React from "react";
+import s from './Accordion.module.css';
 
 type AccordionPropsType = {
     titleValue: string,
@@ -9,7 +10,7 @@ type AccordionPropsType = {
 const Accordion:React.FC<AccordionPropsType>= ({titleValue, listValue, collapsed}) => {
     console.log("Accordion rendering")
         return (
-            <div>
+            <div className={s.content}>
                 <AccordionTitle title={titleValue}/>
                 { !collapsed && <AccordionBody list={listValue}/> }
             </div>

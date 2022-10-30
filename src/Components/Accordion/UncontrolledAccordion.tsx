@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import s from './Accordion.module.css';
 
 type AccordionPropsType = {
     titleValue: string,
@@ -11,7 +12,7 @@ const UncontrolledAccordion:React.FC<AccordionPropsType>= ({titleValue, listValu
     const [collapsed, setCollapsed]=useState<boolean>(true)
 
         return (
-            <div>
+            <div className={s.content}>
                 <AccordionTitle title={titleValue} callback={()=>setCollapsed(!collapsed)}/>
                 { !collapsed && <AccordionBody list={listValue}/> }
             </div>
