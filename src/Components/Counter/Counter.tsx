@@ -4,11 +4,17 @@ import s from './Counter.module.css'
 type CounterType = {
     minValue: number
     maxValue: number
+    step: number
 }
 
-const Counter: React.FC<CounterType> = ({minValue, maxValue}) => {
+const Counter: React.FC<CounterType> = ({minValue, maxValue, step}) => {
 
     const [currentValue, setCurrentValue] = useState<number>(minValue)
+    const increaseValue = () =>{
+        let value=currentValue+step;
+        if (value<=maxValue) setCurrentValue(value);
+        else setCurrentValue(maxValue)
+    }
 
     return (
         <div className={s.wrapper}>
@@ -17,8 +23,8 @@ const Counter: React.FC<CounterType> = ({minValue, maxValue}) => {
                     className={currentValue === maxValue ? `${s.counterItem} ${s.maxCounterItem}` : s.counterItem}>{currentValue}</div>
             </div>
             <div className={s.buttonWindow}>
-                <button className={s.buttonItem} onClick={() => setCurrentValue(currentValue + 1)}
-                        disabled={currentValue === maxValue}>Increase
+                <button className={s.buttonItem} onClick={increaseValue}
+                        disabled={currentValue > maxValue}>Increase
                 </button>
                 <button className={s.buttonItem} onClick={() => setCurrentValue(minValue)}
                         disabled={currentValue === minValue}>Reset

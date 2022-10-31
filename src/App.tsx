@@ -43,7 +43,7 @@ function App() {
 
     return (
         <div className="App">
-            <Counter minValue={0} maxValue={5}/>
+            <Counter minValue={0} maxValue={100} step={5}/>
             <OnOff2/>
             <UncontrolledAccordion titleValue={"Hello"} listValue={['test1', 'test2', 'test3']}/>
             <UncontrolledRating rating={2}/>
