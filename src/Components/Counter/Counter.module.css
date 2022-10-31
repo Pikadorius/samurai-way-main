@@ -48,5 +48,16 @@
     background-color: #36cddc;
     border: none;
     border-radius: 5px;
+    color: #353535;
+    font-weight: 600;
+}
+K
+.buttonItem:active {
+    color: #36cddc;
+    background-color: #353535;
+}
 
+
+.buttonItem:disabled {
+    opacity: 0.5;
 }
