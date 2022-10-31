@@ -3,7 +3,6 @@ import './App.css';
 import Accordion from "./Components/Accordion/Accordion";
 import Rating from "./Components/Rating/Rating";
 import NewComponent from "./Components/NewComponent";
-import StateExample from './Components/StateExample';
 import Banknotes from './Components/Banknotes';
 import NewComponentForInputs from './Components/NewComponentForInputs';
 import NewComponentForInputs2 from './Components/NewComponentForInputs2';
@@ -12,6 +11,7 @@ import OnOff from './Components/OnOff/OnOff';
 import OnOff2 from './Components/OnOff2/OnOff2';
 import UncontrolledAccordion from './Components/Accordion/UncontrolledAccordion';
 import UncontrolledRating from './Components/Rating/UncontrolledRating';
+import Counter from './Components/Counter/Counter';
 
 export type StudentsPropsType = {
     id: number,
@@ -43,6 +43,7 @@ function App() {
 
     return (
         <div className="App">
+            <Counter minValue={0} maxValue={5}/>
             <OnOff2/>
             <UncontrolledAccordion titleValue={"Hello"} listValue={['test1', 'test2', 'test3']}/>
             <UncontrolledRating rating={2}/>
@@ -50,7 +51,6 @@ function App() {
             {/*<NewComponentForInputs/>
             <NewComponentForInputs2/>*/}
             <Banknotes/>
-            <StateExample/>
             <OnOff turndedOn={onOff} change={changeSwitch}/>
             <Accordion titleValue={"You CAN do it, just follow these directions:"}
                        listValue={["Stand your ground", "Step by step", "Never give UP", "LOL"]}

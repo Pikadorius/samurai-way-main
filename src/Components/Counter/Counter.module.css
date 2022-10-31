@@ -1,0 +1,52 @@
+.wrapper {
+    width: 200px;
+    height: 145px;
+    border: 2px solid #36cddc;
+    border-radius: 7px;
+    background-color: #353535;
+    margin: 20px auto;
+}
+
+.counterWindow {
+    width: 180px;
+    height: 70px;
+    margin: 10px 10px;
+    background-color: #36cddc;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+}
+
+.counterItem {
+    align-self: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #353535;
+}
+
+.maxCounterItem {
+    color: red;
+    font-weight: 700;
+    font-size: 35px;
+}
+
+
+.buttonWindow {
+    border: 2px solid #36cddc;
+    border-radius: 6px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.buttonItem {
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+    background-color: #36cddc;
+    border: none;
+    border-radius: 5px;
+
+}
