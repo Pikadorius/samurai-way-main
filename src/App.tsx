@@ -32,6 +32,7 @@ const students: Array<StudentsPropsType> = [
     {id: 10, name: "Charles", age: 98},
     {id: 11, name: "Christopher", age: 100},
 ];
+const step=Number(prompt('Enter step:', "1"));
 
 function App() {
     console.log("App rendering");
@@ -43,7 +44,7 @@ function App() {
 
     return (
         <div className="App">
-            <Counter minValue={0} maxValue={100} step={5}/>
+            <Counter minValue={0} maxValue={5} step={step}/>
             <OnOff2/>
             <UncontrolledAccordion titleValue={"Hello"} listValue={['test1', 'test2', 'test3']}/>
             <UncontrolledRating rating={2}/>
