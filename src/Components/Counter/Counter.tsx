@@ -24,7 +24,7 @@ const Counter: React.FC<CounterType> = ({minValue, maxValue, step}) => {
             </div>
             <div className={s.buttonWindow}>
                 <button className={s.buttonItem} onClick={increaseValue}
-                        disabled={currentValue > maxValue}>Increase
+                        disabled={currentValue >= maxValue}>Increase
                 </button>
                 <button className={s.buttonItem} onClick={() => setCurrentValue(minValue)}
                         disabled={currentValue === minValue}>Reset
