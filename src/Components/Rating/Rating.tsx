@@ -3,23 +3,23 @@ import s from './Rating.module.css';
 import rating from './full.png';
 import norating from './empty.png';
 
-type RatingType = 1 | 2 | 3 | 4 | 5;
+export type RatingValueType =0 | 1 | 2 | 3 | 4 | 5;
 
 type RatingPropsType = {
-    rating: RatingType
+    rating: RatingValueType
+    changeRating: (value:RatingValueType)=>void
 }
 
-const Rating = ({rating}: RatingPropsType) => {
+const Rating = ({rating, changeRating}: RatingPropsType) => {
     console.log("Rating rendering")
-    const [value, setValue] = useState<RatingType>(rating);
 
     return (
         <div>
-            <Star selected={value>0} setRating={()=>setValue(1)}/>
-            <Star selected={value>1} setRating={()=>setValue(2)}/>
-            <Star selected={value>2} setRating={()=>setValue(3)}/>
-            <Star selected={value>3} setRating={()=>setValue(4)}/>
-            <Star selected={value>4} setRating={()=>setValue(5)}/>
+            <Star selected={rating>0} setRating={()=>changeRating(1)}/>
+            <Star selected={rating>1} setRating={()=>changeRating(2)}/>
+            <Star selected={rating>2} setRating={()=>changeRating(3)}/>
+            <Star selected={rating>3} setRating={()=>changeRating(4)}/>
+            <Star selected={rating>4} setRating={()=>changeRating(5)}/>
         </div>
     );
 }

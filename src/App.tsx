@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./Components/Accordion/Accordion";
-import Rating from "./Components/Rating/Rating";
+import Rating, {RatingValueType} from "./Components/Rating/Rating";
 import NewComponent from "./Components/NewComponent";
 import Banknotes from './Components/Banknotes';
 import NewComponentForInputs from './Components/NewComponentForInputs';
@@ -41,9 +41,11 @@ function App() {
         setOnOff(!onOff)
     }
 
+    const [value, setValue] = useState<RatingValueType>(0);
 
     return (
         <div className="App">
+            <Rating rating={value} changeRating={setValue}/>
             <Counter minValue={0} maxValue={5} step={1}/>
             <OnOff2/>
             <UncontrolledAccordion titleValue={"Hello"} listValue={['test1', 'test2', 'test3']}/>
@@ -61,7 +63,6 @@ function App() {
                        listValue={["HTML", "CSS", "JS"]}
                        collapsed={false}/>
             <UncontrolledRating rating={1}/>
-            <Rating rating={2}/>
             {/*<NewComponent students={students}/>*/}
         </div>
     );
