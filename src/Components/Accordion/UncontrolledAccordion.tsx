@@ -13,7 +13,7 @@ const UncontrolledAccordion:React.FC<AccordionPropsType>= ({titleValue, listValu
 
         return (
             <div className={s.content}>
-                <AccordionTitle title={titleValue} callback={()=>setCollapsed(!collapsed)}/>
+                <AccordionTitle title={titleValue} onClick={()=>setCollapsed(!collapsed)}/>
                 { !collapsed && <AccordionBody list={listValue}/> }
             </div>
         );
@@ -21,14 +21,14 @@ const UncontrolledAccordion:React.FC<AccordionPropsType>= ({titleValue, listValu
 
 type  UncontrolledAccordionTitlePropsType = {
     title: string,
-    callback: ()=>void
+    onClick: ()=>void
 }
 
-const AccordionTitle = (props:  UncontrolledAccordionTitlePropsType) => {
+const AccordionTitle = ({title, onClick}:  UncontrolledAccordionTitlePropsType) => {
     console.log("AccordionTitle rendering")
     return (
         <div>
-            <h2 onClick={props.callback}>{props.title}</h2>
+            <h2 onClick={onClick}>{title}</h2>
         </div>
     );
 }
