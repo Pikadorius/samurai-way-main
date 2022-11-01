@@ -22,9 +22,9 @@ export type StudentsPropsType = {
 
 function App() {
     console.log("App rendering");
-    const [onOff, setOnOff] = useState<boolean>(true)
+    const [turned, setOnOff] = useState<boolean>(true)
     const changeSwitch = () => {
-        setOnOff(!onOff)
+        setOnOff(!turned)
     }
 
     const [value, setValue] = useState<RatingValueType>(0);
@@ -38,19 +38,19 @@ function App() {
         <div className="App">
             <Rating rating={value} changeRating={setValue}/>
             <Counter minValue={0} maxValue={5} step={1}/>
-            <OnOff2/>
-            <UncontrolledAccordion titleValue={"Hello"} listValue={['test1', 'test2', 'test3']}/>
+            {/*<OnOff2/>*/}
+            <UncontrolledAccordion titleValue={"I am uncontrolled Accordion"} listValue={['test1', 'test2', 'test3']}/>
             <UncontrolledRating rating={2}/>
             <TodoList/>
             {/*<NewComponentForInputs/>
             <NewComponentForInputs2/>*/}
             <Banknotes/>
-            <OnOff turndedOn={onOff} change={changeSwitch}/>
+            <OnOff turndedOn={turned} change={changeSwitch}/>
             {/*<Accordion titleValue={"You CAN do it, just follow these directions:"}
                        listValue={["Stand your ground", "Step by step", "Never give UP", "LOL"]}
                        collapsed={!onOff}/>*/}
             <UncontrolledRating rating={3}/>
-            <Accordion titleValue={"Need to know:"}
+            <Accordion titleValue={"Accordion with state in App"}
                        listValue={["HTML", "CSS", "JS"]}
                        collapsed={accordionCollapsed}
                        collapse={collapseList}/>
