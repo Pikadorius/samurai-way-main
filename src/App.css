@@ -1,12 +1,12 @@
 .App {
     text-align: center;
     width: 70%;
-    border: 5px solid #14471E;
+    border: 5px solid #293241;
     border-radius: 50px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #68904D;
-    color: white;
+    background-color: #3d5a80;
+    color: #e0fbfc;
 }
 
 .App-logo {
@@ -18,15 +18,16 @@ ul, ol {
     width: 40%;
     margin: auto auto;
     padding: 0 0 20px;
+    list-style: inside;
 }
 
 li {
     margin: 5px 0;
     text-align: left;
     padding: 10px;
-    border: 2px solid #14471E;
+    border: 2px solid #293241;
     border-radius: 10px;
-    background-color: #EE9B01;
+    background-color: #ee6c4d;
 }
 
 .page-header {
@@ -40,7 +41,7 @@ li {
     margin: 20px auto;
     width: 90%;
     height: 10px;
-    background-color: #14471E;
+    background-color: #e0fbfc;
 }
 
 table {
@@ -50,19 +51,19 @@ table {
 }
 
 td, th {
-    border: 2px solid black;
+    border: 2px solid #293241;
     text-align: left;
     padding: 5px;
     max-width: 33%;
 }
 
 .test {
-    border: 2px solid black;
+    border: 2px solid #293241;
     margin: 50px 50px;
 }
 
 .BorderedComponent {
-    border:3px solid black;
+    border:3px solid #293241;
     margin: 10px;
 }
 

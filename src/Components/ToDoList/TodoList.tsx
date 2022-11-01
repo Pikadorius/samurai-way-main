@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Input from '../InputTests/Input';
 import Button from '../Button';
+import s from './ToDoList.module.css'
 
 type AffairType={
     id: number
@@ -30,7 +31,7 @@ const TodoList = () => {
 
 
     return (
-        <div>
+        <div className={s.wrapper}>
             <h2>Need to do:</h2>
             <ol>
                 {affairs.map((affair)=>{

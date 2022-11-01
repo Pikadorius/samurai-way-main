@@ -1,11 +1,13 @@
 .content {
-    border: 5px solid #14471E;
+    box-sizing: border-box;
+    border: 5px solid #293241;
     border-radius: 20px;
     max-width: 800px;
-    margin:0 auto;
+    margin:10px auto;
+    background-color: #98c1d9;
 }
 
 h1, h2, h3 {
-    color: #14471E;
+    color: #293241;
 }
 
