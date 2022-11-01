@@ -10,6 +10,7 @@ type CounterType = {
 const Counter: React.FC<CounterType> = ({minValue, maxValue, step}) => {
 
     const [currentValue, setCurrentValue] = useState<number>(minValue)
+
     const increaseValue = () =>{
         let value=currentValue+step;
         if (value<=maxValue) setCurrentValue(value);
