@@ -61,8 +61,8 @@ function App() {
                        listValue={["HTML", "CSS", "JS"]}
                        collapsed={false}/>
             <UncontrolledRating rating={1}/>
-            {/*<Rating value={2} color={"red"}/>
-            <NewComponent students={students}/>*/}
+            <Rating rating={2}/>
+            {/*<NewComponent students={students}/>*/}
         </div>
     );
 }
