@@ -8,7 +8,7 @@ type UncontolledRatingPropsType = {
     rating: number
 }
 
-const UncontrolledRating:React.FC<UncontolledRatingPropsType> = ({rating}) => {
+const UncontrolledRating: React.FC<UncontolledRatingPropsType> = ({rating}) => {
     console.log("Rating rendering")
     const [value, setValue] = useState<number>(rating);
 
@@ -31,8 +31,10 @@ type StarPropsType = {
 const Star = ({selected, callBack}: StarPropsType) => {
     console.log("Star rendering")
     return (
-        selected ? <span onClick={callBack}> <img className={s.star} alt={'yes'} src={rating}/> </span> :
-            <span onClick={callBack}> <img className={s.star} alt={'no'} src={norating}/> </span>
+        <span onClick={callBack}>
+            {selected ? <img className={s.star} alt={'yes'} src={rating}/> :
+                <img className={s.star} alt={'no'} src={norating}/>}
+        </span>
     )
 }
 
