@@ -65,6 +65,6 @@
 
 .buttonWindow button:disabled {
     opacity: 0.5;
-    color: #36cddc;
-    background-color: #353535;
+    /*color: #36cddc;*/
+    /*background-color: #353535;*/
 }

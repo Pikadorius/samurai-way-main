@@ -38,14 +38,14 @@ function App() {
         <div className="App">
             <Counter minValue={0} maxValue={5} step={1}/>
             <Rating rating={value} changeRating={setValue}/>
-            <OnOff2 onChange={setOnOff}/>
+            <OnOff turndedOn={turned} change={changeSwitch}/>
+            {/*<OnOff2 onChange={setOnOff}/>*/}
             <UncontrolledAccordion titleValue={"I am uncontrolled Accordion"} listValue={['test1', 'test2', 'test3']}/>
             <UncontrolledRating rating={2}/>
             <TodoList/>
             {/*<NewComponentForInputs/>
             <NewComponentForInputs2/>*/}
             <Banknotes/>
-            <OnOff turndedOn={turned} change={changeSwitch}/>
             {/*<Accordion titleValue={"You CAN do it, just follow these directions:"}
                        listValue={["Stand your ground", "Step by step", "Never give UP", "LOL"]}
                        collapsed={!onOff}/>*/}
