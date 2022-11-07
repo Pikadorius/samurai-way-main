@@ -11,6 +11,7 @@ import OnOff2 from './Components/OnOff2/OnOff2';
 import UncontrolledAccordion from './Components/Accordion/UncontrolledAccordion';
 import UncontrolledRating from './Components/Rating/UncontrolledRating';
 import Counter from './Components/Counter/Counter';
+import RouterTests from './Components/RouterTests';
 
 export type StudentsPropsType = {
     id: number,
@@ -36,6 +37,7 @@ function App() {
 
     return (
         <div className="App">
+            <RouterTests/>
             <Counter minValue={0} maxValue={5} step={1}/>
             <Rating rating={value} changeRating={setValue}/>
             <OnOff turndedOn={turned} change={changeSwitch}/>

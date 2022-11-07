@@ -71,3 +71,17 @@ input {
     display: inline-block;
     width: 70px;
 }
+
+.activeLink {
+    color: red;
+    font-weight: 800;
+}
+
+.defaultLink {
+    color: black;
+}
+
+/*Для теста роутер дома, увеличенеи активной ссылки*/
+.active {
+    font-size: 50px;
+}
