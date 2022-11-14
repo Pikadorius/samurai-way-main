@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './Counter.module.css'
 
 type CounterType = {
@@ -16,6 +16,15 @@ const Counter: React.FC<CounterType> = ({minValue, maxValue, step}) => {
         if (value<=maxValue) setCurrentValue(value);
         else setCurrentValue(maxValue)
     }
+
+    useEffect(()=>{
+        let currentData=localStorage.getItem('currentValue')
+        currentData && setCurrentValue(JSON.parse(currentData))
+    }, [])
+
+    useEffect(()=>{
+        localStorage.setItem('currentValue', JSON.stringify(currentValue))
+    }, [currentValue])
 
     return (
         <div className={s.wrapper}>

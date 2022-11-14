@@ -45,8 +45,8 @@ function App() {
             <UncontrolledAccordion titleValue={"I am uncontrolled Accordion"} listValue={['test1', 'test2', 'test3']}/>
             <UncontrolledRating rating={2}/>
             <TodoList/>
-            {/*<NewComponentForInputs/>
-            <NewComponentForInputs2/>*/}
+            <NewComponentForInputs/>
+            <NewComponentForInputs2/>
             <Banknotes/>
             {/*<Accordion titleValue={"You CAN do it, just follow these directions:"}
                        listValue={["Stand your ground", "Step by step", "Never give UP", "LOL"]}
