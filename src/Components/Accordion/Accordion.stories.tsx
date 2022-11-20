@@ -9,7 +9,7 @@ export default {
     * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
     * to learn how to generate automatic titles
     */
-    title: 'Accordion stories',
+    title: 'Components/Accordion stories',
     component: Accordion,
 } as ComponentMeta<typeof Accordion>;
 
@@ -29,9 +29,9 @@ ClosedAccordion.args = {
 
 export const OpenedAccordion = Template.bind({});
 
-    OpenedAccordion.args = {
-        titleValue: 'Opened accordion',
-        listValue: ['One', 'Two', 'Three'],
-        collapsed: false,
-        collapse: action('click collapse')
-    };
+OpenedAccordion.args = {
+    titleValue: 'Opened accordion',
+    listValue: ['One', 'Two', 'Three'],
+    collapsed: false,
+    collapse: action('click collapse')
+};

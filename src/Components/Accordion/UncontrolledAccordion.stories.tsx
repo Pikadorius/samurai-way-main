@@ -9,7 +9,7 @@ export default {
     * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
     * to learn how to generate automatic titles
     */
-    title: 'UncontrolledAccordion stories',
+    title: 'Components/UncontrolledAccordion stories',
     component: UncontrolledAccordion,
 } as ComponentMeta<typeof UncontrolledAccordion>;
 
@@ -18,17 +18,17 @@ export default {
 //👇 We create a “template” of how args map to rendering
 const Template: ComponentStory<typeof UncontrolledAccordion> = (args) => <UncontrolledAccordion {...args} />;
 
-export const ClosedAccordion = Template.bind({});
+export const ClosedUncAccordion = Template.bind({});
 
-ClosedAccordion.args = {
+ClosedUncAccordion.args = {
     titleValue: 'Closed accordion',
     listValue:[]
 };
 
 
-export const OpenedAccordion = Template.bind({});
+export const OpenedUncAccordion = Template.bind({});
 
-OpenedAccordion.args = {
+OpenedUncAccordion.args = {
     titleValue: 'Opened accordion',
-    listValue: ['One', 'Two', 'ThreeUncontrolledAccordion.stories.tsx']
+    listValue: ['One', 'Two', 'Three']
 };

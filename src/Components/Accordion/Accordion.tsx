@@ -3,6 +3,9 @@ import s from './Accordion.module.css';
 
 type AccordionPropsType = {
     titleValue: string,
+    /**
+     * Elements that show when accorion not collapsed
+     */
     listValue: Array<string>,
     collapsed: boolean,
     collapse: () => void
