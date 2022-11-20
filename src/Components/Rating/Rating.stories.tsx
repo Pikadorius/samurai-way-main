@@ -6,7 +6,7 @@ import {action} from '@storybook/addon-actions';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Example/Rating',
+    title: 'Rating',
     component: Rating,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as ComponentMeta<typeof Rating>;
@@ -58,7 +58,7 @@ Rating5.args = {
 
 
 const Template2: ComponentStory<typeof Rating> = (args) => {
-    const [rate, setRate]=useState<RatingValueType>(1)
+    const [rate, setRate]=useState<RatingValueType>(0)
     return <Rating rating={rate} changeRating={setRate} />
 };
 
