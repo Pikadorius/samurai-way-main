@@ -1,8 +1,8 @@
 import React from "react";
 import s from './Accordion.module.css';
 
-type ItemType = {
-    id: number
+export type ItemType = {
+    id?: number
     title: string
     value: any
 }
@@ -53,7 +53,7 @@ const AccordionBody = (props: AccordionBodyPropsType) => {
     return (
         <div>
             <ol>
-                {props.list.map(i => <li key={i.id}>{i.title} cost:<span onClick={(e)=>props.clicked(i.value)}>{i.value}</span></li>)}
+                {props.list.map(i => <li key={i.id}>{i.title} cost:<span onClick={()=>props.clicked(i.value)}>{i.value}</span></li>)}
             </ol>
         </div>
     );

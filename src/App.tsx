@@ -36,7 +36,7 @@ function App() {
         setAccordionCollapsed(!accordionCollapsed)
     }
 
-    const [selectValue,setSelectValue]=useState('100')
+    const [selectValue,setSelectValue]=useState('Choose metal:')
 
     return (
         <div className="App">
@@ -75,4 +75,3 @@ function App() {
 }
 
 export default App;
-

@@ -1,4 +1,7 @@
 import React, {useState} from 'react';
+import s from './Select.module.css'
+import arrowBottom from './ArrowBottom.png'
+import arrowTop from './ArrowTop.png'
 
 type ItemType = {
     id: number
@@ -13,13 +16,25 @@ type SelectPropsType = {
 }
 
 const Select = (props: SelectPropsType) => {
-    const [collapsed, setCollapsed]=useState<boolean>(false)
+    const [collapsed, setCollapsed] = useState<boolean>(true)
+
+    const onClickHandler = (title: string) => {
+        props.onChange(title);
+        setCollapsed(!collapsed)
+    }
 
     return (
-        <div onClick={()=>setCollapsed(!collapsed)}>
-            <div>{props.value}</div>
-            {!collapsed && <div>
-                {props.valuesList.map(i => <div key={i.id}><span>{i.value}</span><span onClick={()=>props.onChange(i.title)}> {i.title}</span></div>)}
+        <div className={s.wrapper}>
+            <div className={s.selectName}>{props.value}
+                <div  onClick={() => setCollapsed(!collapsed)} className={s.arrow}> {collapsed ? <img alt={'arrowBottom'} src={arrowBottom}/> :
+                    <img alt={'arrowTop'} src={arrowTop}/>}</div>
+            </div>
+            {!collapsed && <div className={s.valuesField}>
+                <div className={s.selector}><span onClick={() => onClickHandler('Choose metal:')}>none</span></div>
+
+
+                {props.valuesList.map(i => <div key={i.id} className={s.selector}><span>{i.value}</span><span
+                    onClick={()=>onClickHandler(i.title)}> {i.title}</span></div>)}
             </div>}
         </div>
     );
