@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 
 type OnOff2Type = {
-    // on: boolean
+    on: boolean
     onChange: (value:boolean)=>void;
 }
 
 
 const OnOff2: React.FC<OnOff2Type> = (props) => {
 
-    const [on, setOn] = useState<boolean>(false)
+    const [on, setOn] = useState<boolean>(props.on)
 
     const turnedOn = () => {
         setOn(true)

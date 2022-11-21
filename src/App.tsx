@@ -41,7 +41,7 @@ function App() {
             <Counter minValue={0} maxValue={5} step={1}/>
             <Rating rating={value} changeRating={setValue}/>
             <OnOff turndedOn={turned} change={changeSwitch}/>
-            {/*<OnOff2 onChange={setOnOff}/>*/}
+            <OnOff2 on={turned} onChange={setOnOff}/>
             <UncontrolledAccordion titleValue={"I am uncontrolled Accordion"} listValue={['test1', 'test2', 'test3']}/>
             <UncontrolledRating rating={2}/>
             <TodoList/>
