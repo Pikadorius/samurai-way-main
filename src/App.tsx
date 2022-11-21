@@ -12,6 +12,7 @@ import UncontrolledAccordion from './Components/Accordion/UncontrolledAccordion'
 import UncontrolledRating from './Components/Rating/UncontrolledRating';
 import Counter from './Components/Counter/Counter';
 import RouterTests from './Components/RouterTests';
+import Select from "./Components/CustomSelect/Select";
 
 export type StudentsPropsType = {
     id: number,
@@ -34,6 +35,8 @@ function App() {
     const collapseList = () => {
         setAccordionCollapsed(!accordionCollapsed)
     }
+
+    const [selectValue,setSelectValue]=useState('100')
 
     return (
         <div className="App">
@@ -62,6 +65,11 @@ function App() {
                        collapsed={accordionCollapsed}
                        collapse={collapseList}/>
             <UncontrolledRating rating={1}/>
+            <Select value={selectValue} onChange={setSelectValue} valuesList={[
+                {id:0, title:'Gold', value:'500'},
+                {id:1, title:'Silver', value:'200'},
+                {id:2, title:'Bronze', value:'300'},
+            ]}/>
         </div>
     );
 }
