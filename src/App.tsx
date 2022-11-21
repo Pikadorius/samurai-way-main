@@ -53,7 +53,12 @@ function App() {
                        collapsed={!onOff}/>*/}
             <UncontrolledRating rating={3}/>
             <Accordion titleValue={"Accordion with state in App"}
-                       listValue={["HTML", "CSS", "JS"]}
+                       listValue={[
+                           {id:0, title:'Gold', value:'500'},
+                           {id:1, title:'Silver', value:'200'},
+                           {id:2, title:'Bronze', value:'300'},
+                       ]}
+                       clicked={(value: any, list: string)=>console.log(`${value} in ${list} clicked`)}
                        collapsed={accordionCollapsed}
                        collapse={collapseList}/>
             <UncontrolledRating rating={1}/>

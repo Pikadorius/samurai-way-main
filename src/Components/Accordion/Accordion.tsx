@@ -1,22 +1,29 @@
 import React from "react";
 import s from './Accordion.module.css';
 
+type ItemType = {
+    id: number
+    title: string
+    value: any
+}
+
 type AccordionPropsType = {
     titleValue: string,
     /**
-     * Elements that show when accorion not collapsed
+     * Elements that show when accordion not collapsed
      */
-    listValue: Array<string>,
+    listValue: ItemType[]
     collapsed: boolean,
     collapse: () => void
+    clicked: (value: any, list: string)=>void
 }
 
-const Accordion: React.FC<AccordionPropsType> = ({titleValue, listValue, collapsed, collapse}) => {
+const Accordion: React.FC<AccordionPropsType> = ({titleValue, listValue, collapsed, collapse, clicked}) => {
     console.log("Accordion rendering")
     return (
         <div className={s.content}>
             <AccordionTitle title={titleValue} collapse={collapse}/>
-            {!collapsed && <AccordionBody list={listValue}/>}
+            {!collapsed && <AccordionBody list={listValue} clicked={(value)=>clicked(value,titleValue)}/>}
         </div>
     );
 }
@@ -36,7 +43,8 @@ const AccordionTitle = (props: AccordionTitlePropsType) => {
 }
 
 type AccordionBodyPropsType = {
-    list: Array<string>
+    list: ItemType[]
+    clicked: (value:any)=>void
 }
 
 
@@ -45,7 +53,7 @@ const AccordionBody = (props: AccordionBodyPropsType) => {
     return (
         <div>
             <ol>
-                {props.list.map((item, index) => <li key={index + 1}>{item}</li>)}
+                {props.list.map(i => <li key={i.id}>{i.title} cost:<span onClick={(e)=>props.clicked(i.value)}>{i.value}</span></li>)}
             </ol>
         </div>
     );
