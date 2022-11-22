@@ -10,7 +10,7 @@ export default {
 
 
 export const CustomSelect = () => {
-    const [value, setValue] = useState<any>('Choose metal:')
+    const [value, setValue] = useState<any>(null)
 
     return <MySelect value={value} onChange={setValue} itemsList={[
         {id: 0, title: 'Gold', value: '500'},

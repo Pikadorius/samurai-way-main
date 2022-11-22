@@ -13,8 +13,10 @@ type SelectPropsType = {
 export const SelectDimych = (props: SelectPropsType) => {
 
     const [active, setActive] = useState<boolean>(false)
+    const [hoveredElementValue, setHoveredElementValue]=useState(props.value)
 
-    const items = props.items.find(i => i.value === props.value)
+    const item = props.items.find(i => i.value === props.value)
+    const hoveredItem = props.items.find(i=>i.value===hoveredElementValue)
 
     const toggleItems = () => {
         setActive(!active)
@@ -27,7 +29,7 @@ export const SelectDimych = (props: SelectPropsType) => {
 
     return (
         <div>
-            <div>
+            {/*<div>
                 <h3>Material UI select</h3>
                 <FormControl sx={{m: 1, minWidth: 80}}>
                     <InputLabel id="demo-simple-select-label">City</InputLabel>
@@ -36,18 +38,16 @@ export const SelectDimych = (props: SelectPropsType) => {
                         id="demo-simple-select"
                         value={props.value}
                         label="City"
-                        onChange={() => {
-                        }}
                     >
                         <MenuItem value={'1'}>Minsk</MenuItem>
                         <MenuItem value={'2'}>Moscow</MenuItem>
                         <MenuItem value={'3'}>Kiev</MenuItem>
                     </Select>
                 </FormControl>
-            </div>
+            </div>*/}
 
             <h3>Default select</h3>
-            <div>
+            <div className={s.wrapper}>
                 <select value={props.value} onChange={(e) => props.onChange(e.currentTarget.value)}>
                     <option value="1">Minsk</option>
                     <option value="2">Moscow</option>
@@ -57,13 +57,19 @@ export const SelectDimych = (props: SelectPropsType) => {
 
             <h3>Custom Dimych select</h3>
             <div className={s.select}>
-                <span className={s.main} onClick={toggleItems}>{items && items.title}</span>
+                <span className={s.main} onClick={toggleItems}>{item && item.title}</span>
                 {
                     active &&
                     <div className={s.items}>
-                        {props.items.map(i => <div key={i.value} onClick={() => {
+                        {props.items.map(i => <div
+                            onMouseEnter={()=>setHoveredElementValue(i.value)}
+                            className={s.item+' '+(hoveredItem===i && s.selected)}
+                            key={i.value}
+                            onClick={() => {
                             onItemClick(i.value)
-                        }}>{i.title}</div>)}
+                        }}>
+                            {i.title}
+                        </div>)}
                     </div>
                 }
             </div>

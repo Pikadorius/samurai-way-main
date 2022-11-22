@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import s from './Select.module.css'
+import s from './MySelect.module.css'
 import arrowBottom from './ArrowBottom.png'
 import arrowTop from './ArrowTop.png'
 
@@ -22,7 +22,7 @@ const MySelect = (props: SelectPropsType) => {
         setCollapsed(!collapsed)
     }
 
-    const onItemClickHandler = (title: string) => {
+    const onItemClickHandler = (title: any) => {
         props.onChange(title);
         setCollapsed(!collapsed)
     }
@@ -34,10 +34,10 @@ const MySelect = (props: SelectPropsType) => {
                     <img alt={'arrowTop'} src={arrowTop}/>}</div>
             </div>
             {!collapsed && <div className={s.valuesField}>
-                <div className={s.selector}><span onClick={() => onItemClickHandler('Choose:')}>none</span></div>
+                <div className={s.selector}><span onClick={() => onItemClickHandler(null)}>none</span></div>
 
 
-                {props.itemsList.map(i => <div key={i.id} className={s.selector}><span>{i.value}</span><span
+                {props.itemsList.map(i => <div key={i.id} className={s.selector + ' ' + (props.value===i.title && s.selected)}><span>{i.value}</span><span
                     onClick={()=>onItemClickHandler(i.title)}> {i.title}</span></div>)}
             </div>}
         </div>

@@ -1,9 +1,11 @@
 .wrapper {
     text-align: center;
-    width: 200px;
+    width: 100px;
     border: 2px solid black;
     padding: 5px;
     border-radius: 5px;
+    position: relative;
+    background-color: white;
 }
 
 .selectName {
@@ -20,6 +22,9 @@
     color: black;
     border: 2px solid black;
     padding: 5px;
+    position: absolute;
+    width: 100px;
+    left: -2px;
 }
 
 .selector {
@@ -31,10 +36,20 @@
     border-radius: 3px;
     width: 24px;
     height: 24px;
+    margin-left: auto;
 }
 
 .arrow img {
     width: 24px;
     height: 24px;
     align-self: center;
+}
+
+.selector.selected {
+    background-color: #1ea7fd;
+}
+
+
+.selector:hover {
+    background-color: #36cddc;
 }

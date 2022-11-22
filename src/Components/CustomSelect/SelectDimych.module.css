@@ -1,3 +1,9 @@
+.select {
+    width: 100px;
+    margin: 0 auto;
+    position: relative;
+}
+
 .select span.main {
     border: 1px solid black;
     display: inline-block;
@@ -9,4 +15,10 @@
     position: absolute;
     border: 1px solid black;
     padding: 5px;
+    background-color: #e0fbfc;
+    color: #293241;
+}
+
+.item.selected {
+    background-color: #1ea7fd;
 }
