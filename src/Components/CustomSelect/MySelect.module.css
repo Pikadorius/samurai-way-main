@@ -48,8 +48,3 @@
 .selector.selected {
     background-color: #1ea7fd;
 }
-
-
-.selector:hover {
-    background-color: #36cddc;
-}

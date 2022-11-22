@@ -4,7 +4,7 @@ import arrowBottom from './ArrowBottom.png'
 import arrowTop from './ArrowTop.png'
 
 type ItemType = {
-    id: number
+    id?: number
     title: string
     value: any
 }
@@ -17,28 +17,32 @@ type SelectPropsType = {
 
 const MySelect = (props: SelectPropsType) => {
     const [collapsed, setCollapsed] = useState<boolean>(true)
+    const [hoveredElement, setHoveredElement]=useState(props.value)
+
+    const item=props.itemsList.find(i=>i.value===props.value)
+    const hoveredItem=props.itemsList.find(i=>i.value===hoveredElement)
 
     const onTitleClickHandler = () => {
         setCollapsed(!collapsed)
     }
 
-    const onItemClickHandler = (title: any) => {
-        props.onChange(title);
-        setCollapsed(!collapsed)
+    const onItemClickHandler = (value: any) => {
+        props.onChange(value);
+        onTitleClickHandler();
     }
 
     return (
         <div className={s.wrapper}>
-            <div className={s.selectName}>{props.value}
+            <div className={s.selectName}>{item && item.title}
                 <div  onClick={onTitleClickHandler} className={s.arrow}> {collapsed ? <img alt={'arrowBottom'} src={arrowBottom}/> :
                     <img alt={'arrowTop'} src={arrowTop}/>}</div>
             </div>
             {!collapsed && <div className={s.valuesField}>
-                <div className={s.selector}><span onClick={() => onItemClickHandler(null)}>none</span></div>
-
-
-                {props.itemsList.map(i => <div key={i.id} className={s.selector + ' ' + (props.value===i.title && s.selected)}><span>{i.value}</span><span
-                    onClick={()=>onItemClickHandler(i.title)}> {i.title}</span></div>)}
+                {props.itemsList.map(i => <div
+                    onMouseEnter={()=>setHoveredElement(i.value)}
+                    key={i.value}
+                    className={s.selector + ' ' + (hoveredItem===i && s.selected)}
+                    onClick={()=>onItemClickHandler(i.value)}> {i.title}</div>)}
             </div>}
         </div>
     );

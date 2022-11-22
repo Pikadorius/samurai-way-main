@@ -67,9 +67,9 @@ function App() {
                        collapse={collapseList}/>
             <UncontrolledRating rating={1}/>
             <MySelect value={selectValue} onChange={setSelectValue} itemsList={[
-                {id:0, title:'Gold', value:'500'},
-                {id:1, title:'Silver', value:'200'},
-                {id:2, title:'Bronze', value:'300'},
+                {value: '1', title: 'Minsk'},
+                {value: '2', title: 'Moscow'},
+                {value: '3', title: 'Kiev'},
             ]}/>
             <SelectDimych onChange={setSelectValue} items={[
                 {value: '1', title: 'Minsk'},
