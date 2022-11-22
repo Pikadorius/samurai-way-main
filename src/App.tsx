@@ -12,7 +12,8 @@ import UncontrolledAccordion from './Components/Accordion/UncontrolledAccordion'
 import UncontrolledRating from './Components/Rating/UncontrolledRating';
 import Counter from './Components/Counter/Counter';
 import RouterTests from './Components/RouterTests';
-import Select from "./Components/CustomSelect/Select";
+import MySelect from "./Components/CustomSelect/MySelect";
+import {SelectDimych} from "./Components/CustomSelect/SelectDimych";
 
 export type StudentsPropsType = {
     id: number,
@@ -36,7 +37,7 @@ function App() {
         setAccordionCollapsed(!accordionCollapsed)
     }
 
-    const [selectValue,setSelectValue]=useState('Choose metal:')
+    const [selectValue,setSelectValue]=useState<any>(null)
 
     return (
         <div className="App">
@@ -65,11 +66,16 @@ function App() {
                        collapsed={accordionCollapsed}
                        collapse={collapseList}/>
             <UncontrolledRating rating={1}/>
-            <Select value={selectValue} onChange={setSelectValue} valuesList={[
+            <MySelect value={selectValue} onChange={setSelectValue} itemsList={[
                 {id:0, title:'Gold', value:'500'},
                 {id:1, title:'Silver', value:'200'},
                 {id:2, title:'Bronze', value:'300'},
             ]}/>
+            <SelectDimych onChange={setSelectValue} items={[
+                {value: '1', title: 'Minsk'},
+                {value: '2', title: 'Moscow'},
+                {value: '3', title: 'Kiev'},
+            ]} value={selectValue}/>
         </div>
     );
 }

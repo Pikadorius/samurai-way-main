@@ -1,18 +1,18 @@
 import React, {useState} from 'react';
-import Select from './Select';
+import MySelect from './MySelect';
 import {SelectDimych} from './SelectDimych';
 import {action} from '@storybook/addon-actions';
 
 export default {
     title: 'Components/Select',
-    component: Select
+    component: MySelect
 }
 
 
 export const CustomSelect = () => {
     const [value, setValue] = useState<any>('Choose metal:')
 
-    return <Select value={value} onChange={setValue} valuesList={[
+    return <MySelect value={value} onChange={setValue} itemsList={[
         {id: 0, title: 'Gold', value: '500'},
         {id: 1, title: 'Silver', value: '200'},
         {id: 2, title: 'Bronze', value: '300'},
@@ -21,37 +21,24 @@ export const CustomSelect = () => {
 
 export const DimychSelectWithValue = () => {
 
-    return <SelectDimych onChange={action('Value changed')} items={[
+    const [value, setValue]=useState('2')
+
+    return <SelectDimych onChange={setValue} items={[
         {value: '1', title: 'Minsk'},
         {value: '2', title: 'Moscow'},
         {value: '3', title: 'Kiev'},
-    ]} value={'2'}/>
+    ]} value={value}/>
 }
 
 
 export const DimychSelectWithoutValue = () => {
 
-    return <SelectDimych onChange={action('Value changed')} items={[
+    const [value, setValue]=useState(null)
+
+    return <SelectDimych  value={value} onChange={setValue} items={[
         {value: '1', title: 'Minsk'},
         {value: '2', title: 'Moscow'},
         {value: '3', title: 'Kiev'},
     ]}/>
 }
-
-
-/*
-{
-    const [collapsed, setCollapsed]=useState<boolean>(true)
-
-    return (
-        <div onClick={()=>setCollapsed(!collapsed)} className={s.wrapper}>
-            <div className={s.selectName}>{props.value}</div>
-            {!collapsed && <div className={s.valuesField}>
-                <div className={s.selector}><span onClick={()=>props.onChange('Choose metal:')}>none</span></div>
-                {props.valuesList.map(i => <div key={i.id} className={s.selector}><span>{i.value}</span><span onClick={()=>props.onChange(i.title)}> {i.title}</span></div>)}
-            </div>}
-        </div>
-    );
-};
-*/
 

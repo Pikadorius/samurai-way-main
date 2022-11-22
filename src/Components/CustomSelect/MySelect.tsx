@@ -12,13 +12,17 @@ type ItemType = {
 type SelectPropsType = {
     value: any
     onChange: (value: any) => void
-    valuesList: ItemType[]
+    itemsList: ItemType[]
 }
 
-const Select = (props: SelectPropsType) => {
+const MySelect = (props: SelectPropsType) => {
     const [collapsed, setCollapsed] = useState<boolean>(true)
 
-    const onClickHandler = (title: string) => {
+    const onTitleClickHandler = () => {
+        setCollapsed(!collapsed)
+    }
+
+    const onItemClickHandler = (title: string) => {
         props.onChange(title);
         setCollapsed(!collapsed)
     }
@@ -26,18 +30,18 @@ const Select = (props: SelectPropsType) => {
     return (
         <div className={s.wrapper}>
             <div className={s.selectName}>{props.value}
-                <div  onClick={() => setCollapsed(!collapsed)} className={s.arrow}> {collapsed ? <img alt={'arrowBottom'} src={arrowBottom}/> :
+                <div  onClick={onTitleClickHandler} className={s.arrow}> {collapsed ? <img alt={'arrowBottom'} src={arrowBottom}/> :
                     <img alt={'arrowTop'} src={arrowTop}/>}</div>
             </div>
             {!collapsed && <div className={s.valuesField}>
-                <div className={s.selector}><span onClick={() => onClickHandler('Choose metal:')}>none</span></div>
+                <div className={s.selector}><span onClick={() => onItemClickHandler('Choose:')}>none</span></div>
 
 
-                {props.valuesList.map(i => <div key={i.id} className={s.selector}><span>{i.value}</span><span
-                    onClick={()=>onClickHandler(i.title)}> {i.title}</span></div>)}
+                {props.itemsList.map(i => <div key={i.id} className={s.selector}><span>{i.value}</span><span
+                    onClick={()=>onItemClickHandler(i.title)}> {i.title}</span></div>)}
             </div>}
         </div>
     );
 };
 
-export default Select;
+export default MySelect;
