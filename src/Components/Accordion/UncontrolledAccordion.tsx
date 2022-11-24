@@ -8,29 +8,33 @@ type AccordionPropsType = {
 }
 
 
-const UncontrolledAccordion:React.FC<AccordionPropsType>= ({titleValue, listValue}) => {
+export type StateType = {
+    collapsed: boolean
+}
+
+const UncontrolledAccordion: React.FC<AccordionPropsType> = ({titleValue, listValue}) => {
     console.log("Accordion rendering")
 
-    const [collapsed, dispatchCollapsed]=useReducer(accordionReducer,false)
+    const [state, dispatchState] = useReducer(accordionReducer, {collapsed: false})
 
     const onClickHandler = () => {
-        dispatchCollapsed(collapseAccordionAC(!collapsed))
+        dispatchState(collapseAccordionAC(!state.collapsed))
     }
 
-        return (
-            <div className={s.content}>
-                <AccordionTitle title={titleValue} onClick={onClickHandler}/>
-                { !collapsed && <AccordionBody list={listValue}/> }
-            </div>
-        );
+    return (
+        <div className={s.content}>
+            <AccordionTitle title={titleValue} onClick={onClickHandler}/>
+            {!state.collapsed && <AccordionBody list={listValue}/>}
+        </div>
+    );
 }
 
 type  UncontrolledAccordionTitlePropsType = {
     title: string,
-    onClick: ()=>void
+    onClick: () => void
 }
 
-const AccordionTitle = ({title, onClick}:  UncontrolledAccordionTitlePropsType) => {
+const AccordionTitle = ({title, onClick}: UncontrolledAccordionTitlePropsType) => {
     console.log("AccordionTitle rendering")
     return (
         <div>
@@ -44,12 +48,12 @@ type  UncontrolledAccordionBodyPropsType = {
 }
 
 
-const AccordionBody = (props:  UncontrolledAccordionBodyPropsType) => {
+const AccordionBody = (props: UncontrolledAccordionBodyPropsType) => {
     console.log("AccordionBody rendering")
     return (
         <div>
             <ol>
-                {props.list.map((item,index)=><li key={index+1}>{item}</li>)}
+                {props.list.map((item, index) => <li key={index + 1}>{item}</li>)}
             </ol>
         </div>
     );
