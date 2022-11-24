@@ -18,17 +18,10 @@ export default {
 //👇 We create a “template” of how args map to rendering
 const Template: ComponentStory<typeof UncontrolledAccordion> = (args) => <UncontrolledAccordion {...args} />;
 
-export const ClosedUncAccordion = Template.bind({});
 
-ClosedUncAccordion.args = {
-    titleValue: 'Closed accordion',
-    listValue:[]
-};
+export const UncontrollAccordion = Template.bind({});
 
-
-export const OpenedUncAccordion = Template.bind({});
-
-OpenedUncAccordion.args = {
-    titleValue: 'Opened accordion',
+UncontrollAccordion.args = {
+    titleValue: 'Uncontrolled accordion',
     listValue: ['One', 'Two', 'Three']
 };

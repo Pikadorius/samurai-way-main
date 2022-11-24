@@ -57,12 +57,10 @@ Rating5.args = {
 };
 
 
-const Template2: ComponentStory<typeof Rating> = (args) => {
+const Template2: ComponentStory<typeof Rating> = () => {
     const [rate, setRate]=useState<RatingValueType>(0)
     return <Rating rating={rate} changeRating={setRate} />
 };
 
 export const ContrRating = Template2.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-ContrRating.args = {
-};
