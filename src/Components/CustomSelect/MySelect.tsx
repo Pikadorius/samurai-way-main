@@ -39,7 +39,9 @@ const MySelect = (props: SelectPropsType) => {
         console.log(e.key)
         for (let i = 0; i < props.itemsList.length; i++) {
             if (props.itemsList[i].value === hoveredElement) {
-                const pretender=e.key==='ArrowDown'? props.itemsList[i+1]:e.key==='ArrowUp'? props.itemsList[i-1]:props.itemsList[i]
+                const pretender=e.key==='ArrowDown'
+                    ? props.itemsList[i+1]:e.key==='ArrowUp'
+                    ? props.itemsList[i-1]:props.itemsList[i]
                 if(pretender) {
                     props.onChange(pretender.value)
                     break
