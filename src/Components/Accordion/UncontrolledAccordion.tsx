@@ -1,5 +1,6 @@
-import React, {useState} from "react";
+import React, {useReducer} from "react";
 import s from './Accordion.module.css';
+import {accordionReducer, collapseAccordionAC} from '../../reducers/accordionReducer';
 
 type AccordionPropsType = {
     titleValue: string,
@@ -9,11 +10,16 @@ type AccordionPropsType = {
 
 const UncontrolledAccordion:React.FC<AccordionPropsType>= ({titleValue, listValue}) => {
     console.log("Accordion rendering")
-    const [collapsed, setCollapsed]=useState<boolean>(false)
+
+    const [collapsed, dispatchCollapsed]=useReducer(accordionReducer,false)
+
+    const onClickHandler = () => {
+        dispatchCollapsed(collapseAccordionAC(!collapsed))
+    }
 
         return (
             <div className={s.content}>
-                <AccordionTitle title={titleValue} onClick={()=>setCollapsed(!collapsed)}/>
+                <AccordionTitle title={titleValue} onClick={onClickHandler}/>
                 { !collapsed && <AccordionBody list={listValue}/> }
             </div>
         );

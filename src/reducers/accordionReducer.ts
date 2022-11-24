@@ -1,7 +1,7 @@
 export const accordionReducer = (state:boolean, action:ActionType)=>{
     switch (action.type) {
-        case 'COLLAPSE_ACCORDI0N': {
-            return action.payload;
+        case 'TOGGLE_COLLAPSED': {
+            return action.payload.collapsed;
         }
         default: return state
     }
@@ -11,7 +11,9 @@ export const accordionReducer = (state:boolean, action:ActionType)=>{
 type ActionType=ReturnType<typeof collapseAccordionAC>
 export const collapseAccordionAC=(collapsed: boolean)=>{
     return {
-        type: "COLLAPSE_ACCORDI0N",
-        payload: collapsed
+        type: "TOGGLE_COLLAPSED",
+        payload: {
+            collapsed
+        }
     } as const
 }
