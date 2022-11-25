@@ -18,7 +18,7 @@ type AccordionPropsType = {
     clicked: (value: any, list: string)=>void
 }
 
-const Accordion: React.FC<AccordionPropsType> = ({titleValue, listValue, collapsed, collapse, clicked}) => {
+const SecretAccordion: React.FC<AccordionPropsType> = ({titleValue, listValue, collapsed, collapse, clicked}) => {
     console.log("Accordion rendering")
     return (
         <div className={s.content}>
@@ -27,13 +27,14 @@ const Accordion: React.FC<AccordionPropsType> = ({titleValue, listValue, collaps
         </div>
     );
 }
+const Accordion=React.memo(SecretAccordion)
 
 type AccordionTitlePropsType = {
     title: string,
     collapse: () => void
 }
 
-const AccordionTitle = (props: AccordionTitlePropsType) => {
+const SecretAccordionTitle = (props: AccordionTitlePropsType) => {
     console.log("AccordionTitle rendering")
     return (
         <div>
@@ -41,14 +42,14 @@ const AccordionTitle = (props: AccordionTitlePropsType) => {
         </div>
     );
 }
+const AccordionTitle=React.memo(SecretAccordionTitle)
 
 type AccordionBodyPropsType = {
     list: ItemType[]
     clicked: (value:any)=>void
 }
 
-
-const AccordionBody = (props: AccordionBodyPropsType) => {
+const SecretAccordionBody = (props: AccordionBodyPropsType) => {
     console.log("AccordionBody rendering")
     return (
         <div>
@@ -58,5 +59,6 @@ const AccordionBody = (props: AccordionBodyPropsType) => {
         </div>
     );
 }
+const AccordionBody=React.memo(SecretAccordionBody)
 
 export default Accordion;

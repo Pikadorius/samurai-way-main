@@ -10,7 +10,7 @@ type UncontolledRatingPropsType = {
     rating: RatingType
 }
 
-const UncontrolledRating: React.FC<UncontolledRatingPropsType> = ({rating}) => {
+const SecretUncontrolledRating: React.FC<UncontolledRatingPropsType> = ({rating}) => {
     console.log("Rating rendering")
     const [value, setValue] = useState<RatingType>(rating);
     const setRating = (rating: RatingType) => {
@@ -30,12 +30,14 @@ const UncontrolledRating: React.FC<UncontolledRatingPropsType> = ({rating}) => {
     );
 }
 
+const UncontrolledRating=React.memo(SecretUncontrolledRating)
+
 type StarPropsType = {
     selected: boolean,
     setRating: (e: MouseEvent<HTMLInputElement>) => void
 }
 
-const Star = ({selected, setRating}: StarPropsType) => {
+const SecretStar = ({selected, setRating}: StarPropsType) => {
     console.log("Star rendering")
     return (
         <span onClick={setRating}>
@@ -44,5 +46,6 @@ const Star = ({selected, setRating}: StarPropsType) => {
         </span>
     )
 }
+const Star=React.memo(SecretStar)
 
 export default UncontrolledRating;

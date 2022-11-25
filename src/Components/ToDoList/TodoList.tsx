@@ -11,7 +11,7 @@ type AffairType = {
 
 type AffairsType = AffairType[]
 
-const TodoList = () => {
+const SecretTodolist = () => {
 
     const [affairs, setAffairs] = useState<AffairsType>([
         {id: v1(), name: 'Learn about INPUT'},
@@ -50,5 +50,6 @@ const TodoList = () => {
         </div>
     );
 };
+const TodoList=React.memo(SecretTodolist)
 
 export default TodoList;

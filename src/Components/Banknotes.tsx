@@ -10,7 +10,7 @@ type BanknotesType = {
 }
 
 
-const Banknotes = () => {
+const SecretBanknotes = () => {
     console.log('Banknotes rendering')
 
 
@@ -74,4 +74,5 @@ const Banknotes = () => {
         </div>
     );
 }
+const Banknotes=React.memo(SecretBanknotes)
 export default Banknotes;

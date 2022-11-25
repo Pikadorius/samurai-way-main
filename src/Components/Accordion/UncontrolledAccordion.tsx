@@ -12,7 +12,7 @@ export type StateType = {
     collapsed: boolean
 }
 
-const UncontrolledAccordion: React.FC<AccordionPropsType> = ({titleValue, listValue}) => {
+const SecretUncontrolledAccordion: React.FC<AccordionPropsType> = ({titleValue, listValue}) => {
     console.log("Accordion rendering")
 
     const [state, dispatchState] = useReducer(accordionReducer, {collapsed: false})
@@ -28,13 +28,14 @@ const UncontrolledAccordion: React.FC<AccordionPropsType> = ({titleValue, listVa
         </div>
     );
 }
+const UncontrolledAccordion=React.memo(SecretUncontrolledAccordion)
 
 type  UncontrolledAccordionTitlePropsType = {
     title: string,
     onClick: () => void
 }
 
-const AccordionTitle = ({title, onClick}: UncontrolledAccordionTitlePropsType) => {
+const SecretAccordionTitle = ({title, onClick}: UncontrolledAccordionTitlePropsType) => {
     console.log("AccordionTitle rendering")
     return (
         <div>
@@ -42,13 +43,15 @@ const AccordionTitle = ({title, onClick}: UncontrolledAccordionTitlePropsType) =
         </div>
     );
 }
+const AccordionTitle=React.memo(SecretAccordionTitle)
+
+
 
 type  UncontrolledAccordionBodyPropsType = {
     list: Array<string>
 }
 
-
-const AccordionBody = (props: UncontrolledAccordionBodyPropsType) => {
+const SecretAccordionBody = (props: UncontrolledAccordionBodyPropsType) => {
     console.log("AccordionBody rendering")
     return (
         <div>
@@ -58,5 +61,6 @@ const AccordionBody = (props: UncontrolledAccordionBodyPropsType) => {
         </div>
     );
 }
+const AccordionBody=React.memo(SecretAccordionBody)
 
 export default UncontrolledAccordion;

@@ -10,7 +10,7 @@ type RatingPropsType = {
     changeRating: (value: RatingValueType) => void
 }
 
-const Rating = ({rating, changeRating}: RatingPropsType) => {
+const SecretRating = ({rating, changeRating}: RatingPropsType) => {
     console.log("Rating rendering")
 
     const setRating = (rating: RatingValueType) => {
@@ -29,13 +29,14 @@ const Rating = ({rating, changeRating}: RatingPropsType) => {
         </div>
     );
 }
+const Rating=React.memo(SecretRating)
 
 type StarPropsType = {
     selected: boolean,
     setRating: () => void
 }
 
-const Star = ({selected, setRating}: StarPropsType) => {
+const SecretStar = ({selected, setRating}: StarPropsType) => {
     console.log("Star rendering")
     return (
         <span onClick={setRating}>
@@ -44,5 +45,6 @@ const Star = ({selected, setRating}: StarPropsType) => {
         </span>
     )
 }
+const Star=React.memo(SecretStar)
 
 export default Rating;

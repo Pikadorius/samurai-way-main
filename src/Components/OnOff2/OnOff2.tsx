@@ -6,7 +6,7 @@ type OnOff2Type = {
 }
 
 
-const OnOff2: React.FC<OnOff2Type> = (props) => {
+const SecretOnOff2: React.FC<OnOff2Type> = (props) => {
 
     const [on, setOn] = useState<boolean>(props.on)
 
@@ -56,5 +56,7 @@ const OnOff2: React.FC<OnOff2Type> = (props) => {
         </div>
     );
 };
+
+const OnOff2=React.memo(SecretOnOff2)
 
 export default OnOff2;

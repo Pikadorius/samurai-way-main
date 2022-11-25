@@ -7,7 +7,7 @@ export type OnOffType = {
 }
 
 
-const OnOff: React.FC<OnOffType> = ({turndedOn, change}) => {
+const SecretOnOff: React.FC<OnOffType> = ({turndedOn, change}) => {
     const bulbClass = turndedOn ? `${s.bulb} ${s.bulbOn}` : `${s.bulb} ${s.bulbOff}`
     const armClass = turndedOn ? s.armOn : `${s.armOn} ${s.armOff}`
 
@@ -22,5 +22,6 @@ const OnOff: React.FC<OnOffType> = ({turndedOn, change}) => {
         </div>
     );
 };
+const OnOff=React.memo(SecretOnOff)
 
 export default OnOff;

@@ -7,7 +7,7 @@ type CounterType = {
     step: number
 }
 
-const Counter: React.FC<CounterType> = ({minValue, maxValue, step}) => {
+const SecretCounter: React.FC<CounterType> = ({minValue, maxValue, step}) => {
 
     const [currentValue, setCurrentValue] = useState<number>(minValue)
 
@@ -43,5 +43,7 @@ const Counter: React.FC<CounterType> = ({minValue, maxValue, step}) => {
         </div>
     );
 };
+
+const Counter=React.memo(SecretCounter)
 
 export default Counter;
