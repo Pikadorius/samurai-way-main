@@ -9,11 +9,12 @@ const NewMessagesCounter = memo((props: { count: number }) => {
     return <div>{props.count}</div>
 })
 
-const Users = memo((props: { users: string[] }) => {
+const Users = memo((props: { users: string[] , addUser:()=>void}) => {
     console.log('Users rendering')
-    return <div>{
-        props.users.map((u, i) => <div key={i}>{u}</div>)
-    }</div>
+    return <div>
+        <button onClick={props.addUser}>add user</button>
+        {props.users.map((u, i) => <div key={i}>{u}</div>)}
+    </div>
 })
 
 export const Example1 = () => {
@@ -36,6 +37,6 @@ export const Example1 = () => {
         <button onClick={addNameAndCounter}>Test</button>
 
         <NewMessagesCounter count={counter}/>
-        <Users users={users}/>
+        <Users users={users} addUser={addNewName}/>
     </>
 }
