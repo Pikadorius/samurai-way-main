@@ -16,6 +16,7 @@ export const DifficultCountingExample = () => {
             else return getFact(num - 1) * num;
         }*/
 
+    // useMemo save result and rewrite it only if [a] will be changed (so we don't launch calculations on every useState change)
     const resultA = useMemo(() => {
         let start = 1;
         for (let i = 1; i <= a; i++) {
@@ -50,6 +51,9 @@ export const DifficultCountingExample = () => {
     </>
 }
 
+
+
+// memo saves component to memory and if props after rerender parent didn't change - child do not rerender
 const Users = memo((props: { users: string[] }) => {
     console.log('Secret users rendering')
     return <div>{
@@ -67,6 +71,8 @@ export const HelpsWithReactMemoExample = () => {
         const newName = prompt('Write new name:')
         newName && setUsers([...users, newName])
     }
+
+    // filter rewrites on every useState change, so when we wrap it in useMemo - it will be the same if [users] didn't change
     const filteredUsers = useMemo(() => {
         return users.filter(i => i.toLowerCase().includes('o'))
     }, [users])
@@ -141,6 +147,9 @@ export const LikeUseCallback = () => {
     const [counter, setCounter] = useState<number>(0)
     const [books, setBooks] = useState<string[]>(['React', 'JS', 'CSS', 'Redux'])
 
+
+    // useCallback almost the same as useMemo, but it shouldn't return function, it is only saves it to memory
+    // we must wrap all callbacks, that going to component with memo - in useCallback
     const addBook = useCallback(() => {
         const newBooks = [...books, 'Angular' + new Date().getTime()]
         setBooks(newBooks)
