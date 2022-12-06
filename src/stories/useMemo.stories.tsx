@@ -1,9 +1,10 @@
-import React, {memo, useMemo, useState} from "react";
+import React, {memo, useCallback, useMemo, useState} from "react";
 import {ItemType} from '../Components/CustomSelect/MySelect';
+import button from '../Components/Button';
 
 
 export default {
-    title: 'Example/useMemo demo'
+    title: 'Example/useMemo and useCallback demo'
 }
 
 export const DifficultCountingExample = () => {
@@ -66,30 +67,33 @@ export const HelpsWithReactMemoExample = () => {
         const newName = prompt('Write new name:')
         newName && setUsers([...users, newName])
     }
-/*
     const filteredUsers = useMemo(() => {
         return users.filter(i => i.toLowerCase().includes('o'))
-    }, [users])*/
+    }, [users])
 
 
     return <>
         <button onClick={() => setCounter(counter + 1)}>Send message</button>
         <button onClick={addNewName}>Add new user</button>
         {counter}
-        <Users users={users}/>
+        <Users users={filteredUsers}/>
     </>
 }
 
 
-const SelectElement = memo((props:{items: ItemType[]}) => {
+const SelectElement = memo((props: { items: ItemType[] }) => {
     console.log('render select element')
-    return <ul>{props.items.map((el,i)=><li key={i}>{el.title}</li>)}</ul>
+    return <ul>{props.items.map((el, i) => <li key={i}>{el.title}</li>)}</ul>
 })
 
 export const SelectorMemoExample = () => {
     console.log('Selectors rendering')
     const [count, setCount] = useState(0)
-    const [state, setState] = useState<ItemType[]>([{id: 2, value: 1, title: 'Minsk'}, {id: 3, value: 2, title: 'Moscow'}, {
+    const [state, setState] = useState<ItemType[]>([{id: 2, value: 1, title: 'Minsk'}, {
+        id: 3,
+        value: 2,
+        title: 'Moscow'
+    }, {
         id: 1,
         value: 3,
         title: 'Kiev'
@@ -109,9 +113,47 @@ export const SelectorMemoExample = () => {
 
     return <div style={{display: 'flex'}}>
         <button onClick={() => setCount(count + 1)}>{count}</button>
-        <button onClick={()=>setState([...state, {id:3, title:'Peter', value:5}])}>add new user</button>
+        <button onClick={() => setState([...state, {id: 3, title: 'Peter', value: 5}])}>add new user</button>
         <SelectElement items={state}/>
         <SelectElement items={citiesWithM}/>
         <SelectElement items={citiesFromUkr}/>
     </div>
+}
+
+
+
+
+type BooksPropType = {
+    books: string[]
+    addBook: ()=>void
+}
+
+const Books = memo((props: BooksPropType) => {
+    console.log('Secret books rendering')
+    return <div>
+        <button onClick={props.addBook}>Add book</button>
+        {props.books.map((b, i) => <div key={i}>{b}</div>)}
+    </div>
+})
+
+export const LikeUseCallback = () => {
+    console.log('LikeUseCallback rendering')
+    const [counter, setCounter] = useState<number>(0)
+    const [books, setBooks] = useState<string[]>(['React', 'JS', 'CSS', 'Redux'])
+
+    const addBook = useCallback(() => {
+        const newBooks = [...books, 'Angular' + new Date().getTime()]
+        setBooks(newBooks)
+    },[books])
+
+    const filteredBooks = useMemo(() => {
+        return books.filter(b => b.toLowerCase().includes('r'))
+    }, [books])
+
+
+    return <>
+        <button onClick={() => setCounter(counter + 1)}>Send message</button>
+        {counter}
+        <Books books={filteredBooks} addBook={addBook}/>
+    </>
 }

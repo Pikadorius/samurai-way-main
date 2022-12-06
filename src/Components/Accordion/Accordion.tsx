@@ -35,7 +35,6 @@ type AccordionTitlePropsType = {
 }
 
 const AccordionTitle = memo((props: AccordionTitlePropsType) => {
-    console.log("AccordionTitle rendering")
     return (
         <div>
             <h2 onClick={props.collapse}>{props.title}</h2>
@@ -50,7 +49,6 @@ type AccordionBodyPropsType = {
 }
 
 const AccordionBody = memo((props: AccordionBodyPropsType) => {
-    console.log("AccordionBody rendering")
     return (
         <div>
             <ol>

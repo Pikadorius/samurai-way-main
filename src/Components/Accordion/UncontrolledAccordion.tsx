@@ -34,7 +34,6 @@ type  UncontrolledAccordionTitlePropsType = {
 }
 
 const AccordionTitle = memo(({title, onClick}: UncontrolledAccordionTitlePropsType) => {
-    console.log("Unc. accordionTitle rendering")
     return (
         <div>
             <h2 onClick={onClick}>{title}</h2>
@@ -49,7 +48,6 @@ type  UncontrolledAccordionBodyPropsType = {
 }
 
 const AccordionBody = memo((props: UncontrolledAccordionBodyPropsType) => {
-    console.log("Unc. accordionBody rendering")
     return (
         <div>
             <ol>
