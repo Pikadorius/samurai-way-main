@@ -1,24 +1,23 @@
-import React, {useReducer} from "react";
+import React, {memo, useReducer} from "react";
 import s from './Accordion.module.css';
-import {accordionReducer, collapseAccordionAC} from '../../reducers/accordionReducer';
+import {accordionReducer, collapseAccordion} from '../../reducers/accordionReducer';
 
 type AccordionPropsType = {
     titleValue: string,
     listValue: Array<string>
 }
 
-
 export type StateType = {
     collapsed: boolean
 }
 
-const SecretUncontrolledAccordion: React.FC<AccordionPropsType> = ({titleValue, listValue}) => {
-    console.log("Accordion rendering")
+const UncontrolledAccordion: React.FC<AccordionPropsType> = memo(({titleValue, listValue}) => {
+    console.log("Unc. accordion rendering")
 
     const [state, dispatchState] = useReducer(accordionReducer, {collapsed: false})
 
     const onClickHandler = () => {
-        dispatchState(collapseAccordionAC(!state.collapsed))
+        dispatchState(collapseAccordion(!state.collapsed))
     }
 
     return (
@@ -27,23 +26,21 @@ const SecretUncontrolledAccordion: React.FC<AccordionPropsType> = ({titleValue, 
             {!state.collapsed && <AccordionBody list={listValue}/>}
         </div>
     );
-}
-const UncontrolledAccordion=React.memo(SecretUncontrolledAccordion)
+})
 
 type  UncontrolledAccordionTitlePropsType = {
     title: string,
     onClick: () => void
 }
 
-const SecretAccordionTitle = ({title, onClick}: UncontrolledAccordionTitlePropsType) => {
-    console.log("AccordionTitle rendering")
+const AccordionTitle = memo(({title, onClick}: UncontrolledAccordionTitlePropsType) => {
+    console.log("Unc. accordionTitle rendering")
     return (
         <div>
             <h2 onClick={onClick}>{title}</h2>
         </div>
     );
-}
-const AccordionTitle=React.memo(SecretAccordionTitle)
+})
 
 
 
@@ -51,8 +48,8 @@ type  UncontrolledAccordionBodyPropsType = {
     list: Array<string>
 }
 
-const SecretAccordionBody = (props: UncontrolledAccordionBodyPropsType) => {
-    console.log("AccordionBody rendering")
+const AccordionBody = memo((props: UncontrolledAccordionBodyPropsType) => {
+    console.log("Unc. accordionBody rendering")
     return (
         <div>
             <ol>
@@ -60,7 +57,6 @@ const SecretAccordionBody = (props: UncontrolledAccordionBodyPropsType) => {
             </ol>
         </div>
     );
-}
-const AccordionBody=React.memo(SecretAccordionBody)
+})
 
 export default UncontrolledAccordion;

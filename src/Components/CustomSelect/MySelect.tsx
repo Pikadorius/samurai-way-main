@@ -1,21 +1,21 @@
-import React, {useEffect, useState} from 'react';
+import React, {memo, useEffect, useState} from 'react';
 import s from './MySelect.module.css'
 import arrowBottom from './ArrowBottom.png'
 import arrowTop from './ArrowTop.png'
 
-type ItemType = {
+export type ItemType = {
     id?: number
     title: string
     value: any
 }
 
-type SelectPropsType = {
+export type SelectPropsType = {
     value: any
     onChange: (value: any) => void
     itemsList: ItemType[]
 }
 
-const MySelect = (props: SelectPropsType) => {
+const MySelect = memo((props: SelectPropsType) => {
     const [collapsed, setCollapsed] = useState<boolean>(true)
     const [hoveredElement, setHoveredElement] = useState(props.value)
 
@@ -67,6 +67,6 @@ const MySelect = (props: SelectPropsType) => {
             </div>}
         </div>
     );
-};
+});
 
 export default MySelect;

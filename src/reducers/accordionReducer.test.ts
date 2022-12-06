@@ -1,4 +1,4 @@
-import {accordionReducer, collapseAccordionAC} from './accordionReducer';
+import {accordionReducer, collapseAccordion} from './accordionReducer';
 import {StateType} from '../Components/Accordion/UncontrolledAccordion';
 
 let state:StateType;
@@ -10,7 +10,7 @@ beforeEach(()=>{
 
 
 test('reducer should change value to true', ()=>{
-    const newState = accordionReducer(state, collapseAccordionAC(!state.collapsed))
+    const newState = accordionReducer(state, collapseAccordion(!state.collapsed))
 
     expect(newState.collapsed).toBe(true)
 })

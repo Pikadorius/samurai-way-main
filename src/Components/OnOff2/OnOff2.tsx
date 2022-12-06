@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {memo, useState} from 'react';
 
 type OnOff2Type = {
     on: boolean
@@ -6,7 +6,7 @@ type OnOff2Type = {
 }
 
 
-const SecretOnOff2: React.FC<OnOff2Type> = (props) => {
+const OnOff2: React.FC<OnOff2Type> =memo( (props) => {
 
     const [on, setOn] = useState<boolean>(props.on)
 
@@ -55,8 +55,6 @@ const SecretOnOff2: React.FC<OnOff2Type> = (props) => {
             <div style={indicatorStyle}></div>
         </div>
     );
-};
-
-const OnOff2=React.memo(SecretOnOff2)
+});
 
 export default OnOff2;

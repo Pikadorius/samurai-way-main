@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import './App.css';
 import Accordion from "./Components/Accordion/Accordion";
 import Rating, {RatingValueType} from "./Components/Rating/Rating";
@@ -15,16 +15,9 @@ import RouterTests from './Components/RouterTests';
 import MySelect from "./Components/CustomSelect/MySelect";
 import {SelectDimych} from "./Components/CustomSelect/SelectDimych";
 
-export type StudentsPropsType = {
-    id: number,
-    name: string,
-    age: number
-}
-
-// const step=Number(prompt('Enter step:', "1"));
-
 function App() {
     console.log("App rendering");
+
     const [turned, setOnOff] = useState<boolean>(true)
     const changeSwitch = () => {
         setOnOff(!turned)
@@ -37,25 +30,19 @@ function App() {
         setAccordionCollapsed(!accordionCollapsed)
     }
 
+
     const [selectValue,setSelectValue]=useState<any>(null)
 
     return (
         <div className="App">
             <RouterTests/>
-            <Counter minValue={0} maxValue={5} step={1}/>
             <Rating rating={value} changeRating={setValue}/>
+            <UncontrolledRating rating={2}/>
+
             <OnOff turndedOn={turned} change={changeSwitch}/>
             <OnOff2 on={turned} onChange={setOnOff}/>
+
             <UncontrolledAccordion titleValue={"I am uncontrolled Accordion"} listValue={['test1', 'test2', 'test3']}/>
-            <UncontrolledRating rating={2}/>
-            <TodoList/>
-            {/*<NewComponentForInputs/>*/}
-            {/*<NewComponentForInputs2/>*/}
-            <Banknotes/>
-            {/*<Accordion titleValue={"You CAN do it, just follow these directions:"}
-                       listValue={["Stand your ground", "Step by step", "Never give UP", "LOL"]}
-                       collapsed={!onOff}/>*/}
-            <UncontrolledRating rating={3}/>
             <Accordion titleValue={"Accordion with state in App"}
                        listValue={[
                            {id:0, title:'Gold', value:'500'},
@@ -65,7 +52,7 @@ function App() {
                        clicked={(value: any, list: string)=>console.log(`${value} in ${list} clicked`)}
                        collapsed={accordionCollapsed}
                        collapse={collapseList}/>
-            <UncontrolledRating rating={1}/>
+
             <MySelect value={selectValue} onChange={setSelectValue} itemsList={[
                 {value: '1', title: 'Minsk'},
                 {value: '2', title: 'Moscow'},

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import s from './OnOff.module.css'
 
 export type OnOffType = {
@@ -7,7 +7,7 @@ export type OnOffType = {
 }
 
 
-const SecretOnOff: React.FC<OnOffType> = ({turndedOn, change}) => {
+const OnOff: React.FC<OnOffType> = memo(({turndedOn, change}) => {
     const bulbClass = turndedOn ? `${s.bulb} ${s.bulbOn}` : `${s.bulb} ${s.bulbOff}`
     const armClass = turndedOn ? s.armOn : `${s.armOn} ${s.armOff}`
 
@@ -21,7 +21,6 @@ const SecretOnOff: React.FC<OnOffType> = ({turndedOn, change}) => {
             </div>
         </div>
     );
-};
-const OnOff=React.memo(SecretOnOff)
+});
 
 export default OnOff;
