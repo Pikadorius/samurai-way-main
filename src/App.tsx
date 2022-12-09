@@ -14,6 +14,7 @@ import Counter from './Components/Counter/Counter';
 import RouterTests from './Components/RouterTests';
 import MySelect from "./Components/CustomSelect/MySelect";
 import {SelectDimych} from "./Components/CustomSelect/SelectDimych";
+import Clock from './Components/Clock/Clock';
 
 function App() {
     console.log("App rendering");
@@ -43,6 +44,7 @@ function App() {
     return (
         <div className="App">
             {/*<RouterTests/>*/}
+            <Clock/>
             <Rating rating={value} changeRating={setValue}/>
             {/*<UncontrolledRating rating={2}/>*/}
 
