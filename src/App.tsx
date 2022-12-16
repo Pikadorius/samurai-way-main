@@ -40,11 +40,16 @@ function App() {
     // },[])
 
     // const [selectValue,setSelectValue]=useState<any>(null)
+    const [isAnalog, setIsAnalog]=useState(false)
+
+    const setAnalog = useCallback(() => {
+        setIsAnalog(!isAnalog)
+    }, [isAnalog])
 
     return (
         <div className="App">
             {/*<RouterTests/>*/}
-            <Clock/>
+            <Clock setAnalog={setAnalog} isAnalog={isAnalog}/>
             <Rating rating={value} changeRating={setValue}/>
             {/*<UncontrolledRating rating={2}/>*/}
 
