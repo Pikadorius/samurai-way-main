@@ -6,8 +6,8 @@ export default {
 
 
 const generateData = () => {
-    console.log('Data generating')
-    return 315464651;
+    console.log('Difficult data generating')
+    return 1;
 }
 
 export const Example1 = () => {

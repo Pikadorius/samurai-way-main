@@ -11,7 +11,6 @@ export const SimpleExample = () => {
     const [fake, setFake]=useState(0)
 
     useEffect(()=> {
-        debugger
         console.log('useEffect')
         document.title = counter.toString();
     },[])
@@ -33,10 +32,11 @@ export const SetTimeoutExample = () => {
         setTimeout(()=>document.title=counter.toString(), 3000)
     },[counter])*/
     useEffect(()=>{
-        setInterval(()=>{
+        let timer=setInterval(()=>{
             console.log(`setInterval tick: ${counter}`)
             setCounter((state)=>new Date())
         },1000)
+        return ()=>clearInterval(timer)
     },[])
 
 
