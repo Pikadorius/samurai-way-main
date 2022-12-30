@@ -6,7 +6,7 @@ type ClockPropsType = {
     setAnalog: () => void
 }
 
-const Clock: FC<ClockPropsType> =memo((props) => {
+const Clock:FC<ClockPropsType> = memo((props) => {
     const [date, setDate] = useState(new Date())
 
     useEffect(() => {
@@ -38,19 +38,18 @@ const Clock: FC<ClockPropsType> =memo((props) => {
 
     return (<div className={s.clock}>
         <h2>Clock</h2>
-        {props.isAnalog?
-        <>
-            <h3 className={s.digitalClock}>{date.toLocaleTimeString()}</h3>
-
-        </> :
-
+        {
+            props.isAnalog ?
                 <div>
                     <div className={s.analogClock}>
                         <div className={`${s.dial} ${s.seconds}`} style={secondsStyle}/>
                         <div className={`${s.dial} ${s.minutes}`} style={minutesStyle}/>
                         <div className={`${s.dial} ${s.hours}`} style={hoursStyle}/>
                     </div>
-                </div>}
+                </div>
+                :
+                <h3 className={s.digitalClock}>{date.toLocaleTimeString()}</h3>
+        }
         <button className={s.btn} onClick={props.setAnalog}>Change view</button>
     </div>);
 });

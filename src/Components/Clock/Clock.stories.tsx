@@ -17,3 +17,11 @@ export const ClockExample = () => {
 
     return  <Clock isAnalog={isAnalog} setAnalog={setAnalog}/>
 }
+
+export const AnalogClock = () => {
+    return <Clock isAnalog={true} setAnalog={()=>{}}/>
+}
+
+export const DigitalClock = () => {
+    return <Clock isAnalog={false} setAnalog={()=>{}}/>
+}
